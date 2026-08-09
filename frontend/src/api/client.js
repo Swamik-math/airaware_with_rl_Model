@@ -11,7 +11,7 @@ const api = axios.create({
 
 // Interceptor to add auth token
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem("airpath_token");
+  const token = localStorage.getItem("air-aware_token");
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
@@ -42,7 +42,7 @@ const DEFAULT_PLACES = [
 export async function loginUser(email, password) {
   const res = await api.post("/auth/login", { email, password });
   if (res.data?.token) {
-    localStorage.setItem("airpath_token", res.data.token);
+    localStorage.setItem("air-aware_token", res.data.token);
   }
   return res.data;
 }
@@ -50,7 +50,7 @@ export async function loginUser(email, password) {
 export async function registerUser(name, email, password) {
   const res = await api.post("/auth/register", { name, email, password });
   if (res.data?.token) {
-    localStorage.setItem("airpath_token", res.data.token);
+    localStorage.setItem("air-aware_token", res.data.token);
   }
   return res.data;
 }
@@ -61,7 +61,7 @@ export async function getCurrentUser() {
 }
 
 export function logoutUser() {
-  localStorage.removeItem("airpath_token");
+  localStorage.removeItem("air-aware_token");
 }
 
 // Health Profile

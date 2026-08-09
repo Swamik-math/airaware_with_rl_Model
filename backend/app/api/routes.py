@@ -22,7 +22,7 @@ def get_current_user_id():
 def health() -> tuple:
     return jsonify({
         "status": "ok",
-        "service": "AIRPATH Platform API",
+        "service": "AIR-AWARE Platform API",
         "tagline": "Navigate healthier."
     }), 200
 

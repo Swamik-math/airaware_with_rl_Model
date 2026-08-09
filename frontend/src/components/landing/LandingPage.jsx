@@ -141,7 +141,7 @@ export default function LandingPage({ onGetStarted, onExploreDemo }) {
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-200">
                   <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                  <span>AIRPATH evaluates road-level environmental factors in real-time.</span>
+                  <span>AIR-AWARE evaluates road-level environmental factors in real-time.</span>
                 </div>
               </div>
             </div>
@@ -163,7 +163,7 @@ export default function LandingPage({ onGetStarted, onExploreDemo }) {
               <div className="glass-card p-5 border-emerald-500/50 bg-emerald-950/20 flex items-center justify-between shadow-lg shadow-emerald-500/10">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">AIRPATH Healthiest Route</span>
+                    <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">AIR-AWARE Healthiest Route</span>
                     <span className="text-[10px] bg-emerald-500/30 text-emerald-300 px-2 py-0.5 rounded-full font-bold">RECOMMENDED</span>
                   </div>
                   <p className="text-lg font-bold text-white">7.8 km • 42 min</p>
@@ -186,7 +186,7 @@ export default function LandingPage({ onGetStarted, onExploreDemo }) {
             Powered by Multi-Factor Environmental Intelligence
           </h2>
           <p className="text-gray-400 text-base">
-            AIRPATH continuously ingests and correlates multiple environmental parameters along every candidate road segment.
+            AIR-AWARE continuously ingests and correlates multiple environmental parameters along every candidate road segment.
           </p>
         </div>
 
@@ -229,7 +229,7 @@ export default function LandingPage({ onGetStarted, onExploreDemo }) {
       <section className="max-w-7xl mx-auto px-4 lg:px-12 space-y-12">
         <div className="text-center space-y-4">
           <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest">Seamless Experience</span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">How AIRPATH Works</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">How AIR-AWARE Works</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

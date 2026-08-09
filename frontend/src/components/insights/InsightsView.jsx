@@ -79,7 +79,7 @@ export default function InsightsView() {
       <div className="glass-panel p-6 rounded-2xl border-white/10 space-y-4">
         <div>
           <h3 className="text-lg font-bold text-white">Weekly AQI Exposure Comparison</h3>
-          <p className="text-xs text-gray-400">Fastest Direct Route vs AIRPATH Healthiest Route over the past 7 days</p>
+          <p className="text-xs text-gray-400">Fastest Direct Route vs AIR-AWARE Healthiest Route over the past 7 days</p>
         </div>
 
         <div className="h-[320px] w-full pt-4">
@@ -103,7 +103,7 @@ export default function InsightsView() {
                 labelStyle={{ color: "#F9FAFB", fontWeight: "bold" }}
               />
               <Area type="monotone" dataKey="aqi_fastest" name="Fastest Route AQI" stroke="#EF4444" fillOpacity={1} fill="url(#colorFastest)" strokeWidth={2} />
-              <Area type="monotone" dataKey="aqi_healthiest" name="AIRPATH Healthiest AQI" stroke="#10B981" fillOpacity={1} fill="url(#colorHealthiest)" strokeWidth={3} />
+              <Area type="monotone" dataKey="aqi_healthiest" name="AIR-AWARE Healthiest AQI" stroke="#10B981" fillOpacity={1} fill="url(#colorHealthiest)" strokeWidth={3} />
             </AreaChart>
           </ResponsiveContainer>
         </div>

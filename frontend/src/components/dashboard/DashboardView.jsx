@@ -111,7 +111,7 @@ export default function DashboardView({ user, profile, sectors = [] }) {
       {/* PERSONALIZED GREETING & HEADER */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 glass-panel p-6 rounded-2xl border-white/10">
         <div>
-          <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">AIRPATH Intelligent Dashboard</span>
+          <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">AIR-AWARE Intelligent Dashboard</span>
           <h1 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
             Good evening, {user?.name || "Explorer"}.
           </h1>

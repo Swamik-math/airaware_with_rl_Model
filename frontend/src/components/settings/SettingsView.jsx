@@ -83,7 +83,7 @@ export default function SettingsView({ user, profile, onUpdateProfile, onLogout 
         </h3>
 
         <p className="text-xs text-gray-300">
-          Your health sensitivities are treated as strictly confidential. AIRPATH never exposes health preferences in public URLs or third-party APIs.
+          Your health sensitivities are treated as strictly confidential. AIR-AWARE never exposes health preferences in public URLs or third-party APIs.
         </p>
 
         <div className="pt-2 flex flex-wrap gap-3">

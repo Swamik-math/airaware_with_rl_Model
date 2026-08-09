@@ -44,7 +44,7 @@ def get_mapbox_geocoding(query: str):
     api_results = []
     try:
         nom_url = "https://nominatim.openstreetmap.org/search"
-        headers = {"User-Agent": "AIRPATH-App/1.0"}
+        headers = {"User-Agent": "AIR-AWARE-App/1.0"}
         nom_params = {"q": query, "format": "json", "limit": 5}
         resp = requests.get(nom_url, params=nom_params, headers=headers, timeout=3)
         if resp.status_code == 200:

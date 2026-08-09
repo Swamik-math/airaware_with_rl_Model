@@ -7,7 +7,7 @@ from flask import current_app
 
 def hash_password(password: str) -> str:
     """Hashes password securely using SHA-256 with salt."""
-    salt = "airpath_salt_v1_secure"
+    salt = "air-aware_salt_v1_secure"
     return hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt.encode('utf-8'), 100000).hex()
 
 def verify_password(password: str, password_hash: str) -> bool:
@@ -16,7 +16,7 @@ def verify_password(password: str, password_hash: str) -> bool:
 
 def generate_token(user_id: int) -> str:
     """Generates a base64 encoded JSON token with signature."""
-    secret = current_app.config.get("SECRET_KEY", "airpath-dev-key")
+    secret = current_app.config.get("SECRET_KEY", "air-aware-dev-key")
     payload = {
         "user_id": user_id,
         "exp": int(time.time()) + (86400 * 30) # 30 days expiry
@@ -29,7 +29,7 @@ def decode_token(token: str) -> int:
     """Decodes token and returns user_id if valid."""
     if not token or "." not in token:
         return None
-    secret = current_app.config.get("SECRET_KEY", "airpath-dev-key")
+    secret = current_app.config.get("SECRET_KEY", "air-aware-dev-key")
     parts = token.split(".")
     if len(parts) != 2:
         return None

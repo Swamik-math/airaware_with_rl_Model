@@ -10,7 +10,7 @@ export default function PresentationSection({ onLaunchDashboard }) {
           <span>Core Concept & Project Differentiator</span>
         </div>
         <h1 className="text-4xl sm:text-5xl font-black text-white leading-tight">
-          Why AIRPATH Matters
+          Why AIR-AWARE Matters
         </h1>
         <p className="text-base text-gray-300">
           A fundamental paradigm shift in modern navigation engineering.
@@ -39,10 +39,10 @@ export default function PresentationSection({ onLaunchDashboard }) {
           <div className="pt-2 text-xs font-bold text-cyan-400">One-size-fits-all approach</div>
         </div>
 
-        {/* 3. AIRPATH Personalized Health Navigation */}
+        {/* 3. AIR-AWARE Personalized Health Navigation */}
         <div className="glass-card p-6 rounded-2xl border-emerald-500/50 space-y-3 bg-emerald-950/20 shadow-xl shadow-emerald-500/10">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">AIRPATH Platform</span>
+            <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">AIR-AWARE Platform</span>
             <Sparkles className="w-4 h-4 text-emerald-400" />
           </div>
           <h3 className="text-xl font-bold text-emerald-300">"What's the healthiest route for YOU?"</h3>
@@ -72,7 +72,7 @@ export default function PresentationSection({ onLaunchDashboard }) {
           onClick={onLaunchDashboard}
           className="btn-primary text-base px-8 py-3.5 rounded-xl font-bold shadow-xl shadow-emerald-500/25"
         >
-          Try AIRPATH Live Dashboard
+          Try AIR-AWARE Live Dashboard
         </button>
       </div>
     </div>

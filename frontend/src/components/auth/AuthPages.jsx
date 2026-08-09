@@ -34,7 +34,7 @@ export function LoginView({ onLoginSuccess, onSwitchToRegister }) {
               <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center text-white shadow-lg">
                 <Wind className="w-5 h-5" />
               </div>
-              <span className="font-bold text-2xl text-white">AIRPATH</span>
+              <span className="font-bold text-2xl text-white">AIR-AWARE</span>
             </div>
 
             <h2 className="text-3xl font-extrabold text-white mt-8 leading-tight">
@@ -60,7 +60,7 @@ export function LoginView({ onLoginSuccess, onSwitchToRegister }) {
             </div>
           </div>
 
-          <p className="text-xs text-gray-400">© 2026 AIRPATH. Environmental Health Navigation.</p>
+          <p className="text-xs text-gray-400">© 2026 AIR-AWARE. Environmental Health Navigation.</p>
         </div>
 
         {/* RIGHT: Login Form */}
@@ -121,7 +121,7 @@ export function LoginView({ onLoginSuccess, onSwitchToRegister }) {
           </div>
 
           <button
-            onClick={() => onLoginSuccess({ name: "Demo User", email: "demo@airpath.app" }, null)}
+            onClick={() => onLoginSuccess({ name: "Demo User", email: "demo@air-aware.app" }, null)}
             className="w-full btn-secondary py-2.5 rounded-xl justify-center text-xs font-semibold border-white/10 hover:border-white/20"
           >
             Continue as Guest / Demo Mode

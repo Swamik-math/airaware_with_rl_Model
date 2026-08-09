@@ -14,7 +14,7 @@ export default function Header({ currentTab, onNavigate, user, onLogout, theme, 
         <div>
           <div className="flex items-center gap-2">
             <span className="font-bold text-xl tracking-tight text-white group-hover:text-emerald-400 transition-colors">
-              AIRPATH
+              AIR-AWARE
             </span>
             <span className="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
               AI Health Nav
@@ -94,7 +94,7 @@ export default function Header({ currentTab, onNavigate, user, onLogout, theme, 
           }`}
         >
           <ShieldCheck className="w-4 h-4" />
-          Why AIRPATH?
+          Why AIR-AWARE?
         </button>
       </nav>
 

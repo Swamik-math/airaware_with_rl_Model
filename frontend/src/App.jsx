@@ -12,7 +12,7 @@ import PresentationSection from "./components/presentation/PresentationSection";
 import { getCurrentUser, getAqiGrid, logoutUser } from "./api/client";
 
 export default function App() {
-  const [theme, setTheme] = useState(() => localStorage.getItem("airpath_theme") || "dark");
+  const [theme, setTheme] = useState(() => localStorage.getItem("air-aware_theme") || "dark");
   const [currentTab, setCurrentTab] = useState("landing");
   const [user, setUser] = useState(null);
   const [profile, setProfile] = useState(null);
@@ -20,7 +20,7 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("airpath_theme", theme);
+    localStorage.setItem("air-aware_theme", theme);
   }, [theme]);
 
   // Load initial active session & environmental AQI grid
@@ -151,7 +151,7 @@ export default function App() {
       <footer className="w-full border-t border-white/10 glass-panel py-8 px-4 lg:px-8 text-center text-xs text-gray-400 mt-16">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-white">AIRPATH</span>
+            <span className="font-bold text-white">AIR-AWARE</span>
             <span>— Environmental Health Navigation Platform</span>
           </div>
           <p>Designed for Personalized, Air-Aware Travel. General environmental guidance.</p>
