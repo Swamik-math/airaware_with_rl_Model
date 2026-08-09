@@ -1,305 +1,162 @@
-import { useEffect, useState } from "react";
-import MapView from "./components/MapView";
-import RoutePanel from "./components/RoutePanel";
-import { geocodePlace, getRoutes, searchPlaces } from "./api/client";
-
-const BENGALURU_BOUNDS = {
-  minLat: 12.75,
-  maxLat: 13.2,
-  minLon: 77.35,
-  maxLon: 77.85
-};
-
-function isInBengaluru(point) {
-  return (
-    point.lat >= BENGALURU_BOUNDS.minLat &&
-    point.lat <= BENGALURU_BOUNDS.maxLat &&
-    point.lon >= BENGALURU_BOUNDS.minLon &&
-    point.lon <= BENGALURU_BOUNDS.maxLon
-  );
-}
+import { useState, useEffect } from "react";
+import Header from "./components/layout/Header";
+import LandingPage from "./components/landing/LandingPage";
+import { LoginView, RegisterView } from "./components/auth/AuthPages";
+import OnboardingWizard from "./components/onboarding/OnboardingWizard";
+import DashboardView from "./components/dashboard/DashboardView";
+import HistoryView from "./components/history/HistoryView";
+import SavedRoutesView from "./components/saved/SavedRoutesView";
+import InsightsView from "./components/insights/InsightsView";
+import SettingsView from "./components/settings/SettingsView";
+import PresentationSection from "./components/presentation/PresentationSection";
+import { getCurrentUser, getAqiGrid, logoutUser } from "./api/client";
 
 export default function App() {
-  const [sourceText, setSourceText] = useState("MG Road, Bengaluru");
-  const [destinationText, setDestinationText] = useState("Electronic City, Bengaluru");
-  const [preference, setPreference] = useState("healthiest");
-  const [weights, setWeights] = useState({ distance: 0.2, aqi: 0.55, density: 0.25 });
-
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [routes, setRoutes] = useState(null);
-  const [routeAnimationToken, setRouteAnimationToken] = useState(0);
-  const [selectedRoute, setSelectedRoute] = useState("healthiest");
-  const [hoveredRoute, setHoveredRoute] = useState("");
-  const [panelExpanded, setPanelExpanded] = useState(false);
-  const [sourcePoint, setSourcePoint] = useState({ lat: 28.6139, lon: 77.2090 });
-  const [destinationPoint, setDestinationPoint] = useState({ lat: 28.5355, lon: 77.391 });
-
-  const [sourceSuggestions, setSourceSuggestions] = useState([]);
-  const [destinationSuggestions, setDestinationSuggestions] = useState([]);
+  const [theme, setTheme] = useState(() => localStorage.getItem("airpath_theme") || "dark");
+  const [currentTab, setCurrentTab] = useState("landing");
+  const [user, setUser] = useState(null);
+  const [profile, setProfile] = useState(null);
+  const [sectors, setSectors] = useState([]);
 
   useEffect(() => {
-    const timeoutId = setTimeout(async () => {
-      if (!sourceText.trim()) {
-        setSourceSuggestions([]);
-        return;
-      }
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("airpath_theme", theme);
+  }, [theme]);
 
-      try {
-        const results = await searchPlaces(sourceText.trim());
-        setSourceSuggestions(results);
-      } catch {
-        setSourceSuggestions([]);
-      }
-    }, 300);
-
-    return () => clearTimeout(timeoutId);
-  }, [sourceText]);
-
+  // Load initial active session & environmental AQI grid
   useEffect(() => {
-    const timeoutId = setTimeout(async () => {
-      if (!destinationText.trim()) {
-        setDestinationSuggestions([]);
-        return;
-      }
+    async function initApp() {
+      try {
+        const grid = await getAqiGrid();
+        setSectors(grid);
+      } catch (e) {}
 
       try {
-        const results = await searchPlaces(destinationText.trim());
-        setDestinationSuggestions(results);
-      } catch {
-        setDestinationSuggestions([]);
-      }
-    }, 300);
-
-    return () => clearTimeout(timeoutId);
-  }, [destinationText]);
-
-  async function handleFindRoutes(event) {
-    event.preventDefault();
-    setLoading(true);
-    setError("");
-
-    try {
-      const resolvedSource = await geocodePlace(sourceText.trim());
-      const resolvedDestination = await geocodePlace(destinationText.trim());
-
-      if (!isInBengaluru(resolvedSource) || !isInBengaluru(resolvedDestination)) {
-        throw new Error("Both source and destination must be inside Bengaluru");
-      }
-
-      setSourcePoint({ lat: resolvedSource.lat, lon: resolvedSource.lon });
-      setDestinationPoint({ lat: resolvedDestination.lat, lon: resolvedDestination.lon });
-
-      const payload = {
-        source: { lat: resolvedSource.lat, lon: resolvedSource.lon },
-        destination: { lat: resolvedDestination.lat, lon: resolvedDestination.lon },
-        preference,
-        weights
-      };
-      const result = await getRoutes(payload);
-      setRoutes(result);
-      setRouteAnimationToken((prev) => prev + 1);
-      setSelectedRoute(preference);
-      setPanelExpanded(true);
-    } catch (err) {
-      const message = err?.response?.data?.error || err?.message || "Route calculation failed. Check source/destination.";
-      setError(message);
-    } finally {
-      setLoading(false);
+        const meData = await getCurrentUser();
+        if (meData?.user) {
+          setUser(meData.user);
+          setProfile(meData.profile);
+        }
+      } catch (e) {}
     }
-  }
+    initApp();
+  }, []);
 
-  function selectSuggestion(kind, suggestion) {
-    const nextPoint = { lat: Number(suggestion.lat), lon: Number(suggestion.lon) };
-    if (kind === "source") {
-      setSourceText(suggestion.display_name);
-      setSourcePoint(nextPoint);
-      setSourceSuggestions([]);
-      return;
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
+
+  const handleLogout = () => {
+    logoutUser();
+    setUser(null);
+    setProfile(null);
+    setCurrentTab("landing");
+  };
+
+  const handleAuthSuccess = (userData, profileData, isNewUser = false) => {
+    setUser(userData);
+    setProfile(profileData);
+    if (isNewUser || !profileData || !profileData.air_sensitivity) {
+      setCurrentTab("onboarding");
+    } else {
+      setCurrentTab("dashboard");
     }
-
-    setDestinationText(suggestion.display_name);
-    setDestinationPoint(nextPoint);
-    setDestinationSuggestions([]);
-  }
-
-  function setWeight(name, value) {
-    const next = { ...weights, [name]: Number(value) };
-    const sum = next.distance + next.aqi + next.density;
-    setWeights({
-      distance: Number((next.distance / sum).toFixed(2)),
-      aqi: Number((next.aqi / sum).toFixed(2)),
-      density: Number((next.density / sum).toFixed(2))
-    });
-  }
+  };
 
   return (
-    <div className={`layout ${panelExpanded ? "sheet-expanded" : "sheet-collapsed"}`}>
-      <main className="content">
-        <MapView
-          source={[sourcePoint.lat, sourcePoint.lon]}
-          destination={[destinationPoint.lat, destinationPoint.lon]}
-          routes={routes}
-          animationToken={routeAnimationToken}
-          selectedRoute={selectedRoute}
-          hoveredRoute={hoveredRoute}
-          onSelectRoute={setSelectedRoute}
-          onHoverRoute={setHoveredRoute}
-        />
+    <div className="min-h-screen flex flex-col bg-[var(--bg-primary)] text-[var(--text-main)] selection:bg-emerald-500 selection:text-white">
+      {/* Top Sticky Header */}
+      <Header
+        currentTab={currentTab}
+        onNavigate={setCurrentTab}
+        user={user}
+        onLogout={handleLogout}
+        theme={theme}
+        onToggleTheme={toggleTheme}
+      />
+
+      {/* Main Page View Router */}
+      <main className="flex-1 w-full">
+        {currentTab === "landing" && (
+          <LandingPage
+            onGetStarted={() => setCurrentTab(user ? "dashboard" : "register")}
+            onExploreDemo={() => setCurrentTab("dashboard")}
+          />
+        )}
+
+        {currentTab === "login" && (
+          <LoginView
+            onLoginSuccess={(u, p) => handleAuthSuccess(u, p, false)}
+            onSwitchToRegister={() => setCurrentTab("register")}
+          />
+        )}
+
+        {currentTab === "register" && (
+          <RegisterView
+            onRegisterSuccess={(u, p) => handleAuthSuccess(u, p, true)}
+            onSwitchToLogin={() => setCurrentTab("login")}
+          />
+        )}
+
+        {currentTab === "onboarding" && (
+          <OnboardingWizard
+            onComplete={(updatedProfile) => {
+              setProfile(updatedProfile);
+              setCurrentTab("dashboard");
+            }}
+          />
+        )}
+
+        {currentTab === "dashboard" && (
+          <DashboardView
+            user={user}
+            profile={profile}
+            sectors={sectors}
+          />
+        )}
+
+        {currentTab === "history" && (
+          <HistoryView
+            onSelectHistoryRoute={(histItem) => {
+              setCurrentTab("dashboard");
+            }}
+          />
+        )}
+
+        {currentTab === "saved" && (
+          <SavedRoutesView
+            onRecalculateRoute={(savedItem) => {
+              setCurrentTab("dashboard");
+            }}
+          />
+        )}
+
+        {currentTab === "insights" && <InsightsView />}
+
+        {currentTab === "settings" && (
+          <SettingsView
+            user={user}
+            profile={profile}
+            onUpdateProfile={setProfile}
+            onLogout={handleLogout}
+          />
+        )}
+
+        {currentTab === "presentation" && (
+          <PresentationSection onLaunchDashboard={() => setCurrentTab("dashboard")} />
+        )}
       </main>
 
-      <aside className={`sidebar ${panelExpanded ? "expanded" : "collapsed"}`}>
-        <button
-          type="button"
-          className="sheet-toggle"
-          onClick={() => setPanelExpanded((prev) => !prev)}
-          aria-expanded={panelExpanded}
-          aria-label="Toggle route controls"
-        >
-          <span className="sheet-handle" />
-        </button>
-
-        <div className="brand-row">
-          <h1>AirAware</h1>
-          <p className="subtitle">Bengaluru</p>
+      {/* Footer */}
+      <footer className="w-full border-t border-white/10 glass-panel py-8 px-4 lg:px-8 text-center text-xs text-gray-400 mt-16">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-white">AIRPATH</span>
+            <span>— Environmental Health Navigation Platform</span>
+          </div>
+          <p>Designed for Personalized, Air-Aware Travel. General environmental guidance.</p>
         </div>
-
-        <form onSubmit={handleFindRoutes} className="form-grid">
-          <div className="location-field">
-            <label>
-              Source
-              <input
-                className="input-control"
-                value={sourceText}
-                onChange={(e) => setSourceText(e.target.value)}
-                placeholder="Enter source in Bengaluru"
-              />
-            </label>
-            {sourceSuggestions.length > 0 && (
-              <div className="suggestions">
-                {sourceSuggestions.map((item) => (
-                  <button
-                    key={`${item.place_id}-source`}
-                    type="button"
-                    className="suggestion-item"
-                    onClick={() => selectSuggestion("source", item)}
-                  >
-                    {item.display_name}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="location-field">
-            <label>
-              Destination
-              <input
-                className="input-control"
-                value={destinationText}
-                onChange={(e) => setDestinationText(e.target.value)}
-                placeholder="Enter destination in Bengaluru"
-              />
-            </label>
-            {destinationSuggestions.length > 0 && (
-              <div className="suggestions">
-                {destinationSuggestions.map((item) => (
-                  <button
-                    key={`${item.place_id}-destination`}
-                    type="button"
-                    className="suggestion-item"
-                    onClick={() => selectSuggestion("destination", item)}
-                  >
-                    {item.display_name}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <div className="mode-wrap">
-            <p className="control-title">Route Priority</p>
-            <div className="mode-toggle" role="tablist" aria-label="Route priority">
-              <button
-                type="button"
-                className={`mode-btn ${preference === "shortest" ? "active" : ""}`}
-                onClick={() => setPreference("shortest")}
-              >
-                Shortest
-              </button>
-              <button
-                type="button"
-                className={`mode-btn ${preference === "fastest" ? "active" : ""}`}
-                onClick={() => setPreference("fastest")}
-              >
-                Fastest
-              </button>
-              <button
-                type="button"
-                className={`mode-btn ${preference === "healthiest" ? "active" : ""}`}
-                onClick={() => setPreference("healthiest")}
-              >
-                Healthiest
-              </button>
-            </div>
-          </div>
-
-          <div className="weights">
-            <p className="control-title">Dynamic Weights</p>
-            <label className="weight-row">
-              <span>Distance</span>
-              <strong>{weights.distance}</strong>
-              <input
-                type="range"
-                min="0.05"
-                max="0.9"
-                step="0.05"
-                value={weights.distance}
-                onChange={(e) => setWeight("distance", e.target.value)}
-              />
-            </label>
-            <label className="weight-row">
-              <span>AQI</span>
-              <strong>{weights.aqi}</strong>
-              <input
-                type="range"
-                min="0.05"
-                max="0.9"
-                step="0.05"
-                value={weights.aqi}
-                onChange={(e) => setWeight("aqi", e.target.value)}
-              />
-            </label>
-            <label className="weight-row">
-              <span>Population</span>
-              <strong>{weights.density}</strong>
-              <input
-                type="range"
-                min="0.05"
-                max="0.9"
-                step="0.05"
-                value={weights.density}
-                onChange={(e) => setWeight("density", e.target.value)}
-              />
-            </label>
-          </div>
-
-          <button type="submit" className="primary-btn" disabled={loading}>
-            {loading ? "Calculating..." : "Find Routes"}
-          </button>
-        </form>
-
-        {error && <p className="error">{error}</p>}
-
-        <RoutePanel
-          routes={routes}
-          loading={loading}
-          selectedRoute={selectedRoute}
-          hoveredRoute={hoveredRoute}
-          onSelectRoute={setSelectedRoute}
-          onHoverRoute={setHoveredRoute}
-        />
-      </aside>
+      </footer>
     </div>
   );
 }

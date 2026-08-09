@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+.pnpm-store/
+
+# Build & Output
+dist/
+frontend/dist/
+build/
+
+# Python & Virtual Envs
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+venv/
+env/
+.venv/
+backend/instance/*.db
+backend/instance/*.sqlite
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+*.log
+
+# IDE & System
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

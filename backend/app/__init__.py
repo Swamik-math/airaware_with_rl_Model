@@ -13,7 +13,9 @@ def create_app() -> Flask:
     CORS(app)
     db.init_app(app)
 
-    app.register_blueprint(api_bp)
+    # Register blueprint at both /api and root / for full backwards compatibility
+    app.register_blueprint(api_bp, url_prefix="/api")
+    app.register_blueprint(api_bp, name="api_root")
 
     with app.app_context():
         db.create_all()
