@@ -49,7 +49,7 @@ body {
   height: 100% !important;
   min-height: 520px !important;
   border-radius: 1rem;
-  background-color: #0b0f19 !important;
+  background-color: var(--bg-primary) !important;
   z-index: 1;
 }
 

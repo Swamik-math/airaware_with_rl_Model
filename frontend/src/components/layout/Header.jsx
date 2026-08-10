@@ -13,14 +13,11 @@ export default function Header({ currentTab, onNavigate, user, onLogout, theme, 
         </div>
         <div>
           <div className="flex items-center gap-2">
-            <span className="font-bold text-xl tracking-tight text-white group-hover:text-emerald-400 transition-colors">
+            <span className="font-bold text-xl tracking-tight group-hover:text-emerald-400 transition-colors">
               AIR-AWARE
             </span>
-            <span className="text-[10px] uppercase tracking-wider font-semibold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-              AI Health Nav
-            </span>
           </div>
-          <p className="text-xs text-gray-400 font-medium">Navigate healthier.</p>
+          <p className="text-xs font-medium" style={{ color: "var(--text-muted)" }}>Navigate healthier.</p>
         </div>
       </div>
 
