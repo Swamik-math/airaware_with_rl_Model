@@ -166,12 +166,24 @@ def analyze_and_rank_routes(candidate_routes, health_profile=None, custom_weight
         "reasons": explanation_reasons
     }
 
+    # Evaluate via Reinforcement Learning Q-Routing Model Engine
+    try:
+        from app.services.rl_optimizer_service import rl_evaluate_routes
+        rl_res = rl_evaluate_routes(candidate_routes, health_profile=profile)
+        if rl_res:
+            reward_map = {r["id"]: r.get("rl_reward", 0.0) for r in rl_res.get("evaluated_routes", [])}
+            for route_item in analyzed_routes:
+                route_item["rl_reward"] = reward_map.get(route_item["id"], -10.0)
+    except Exception:
+        rl_res = None
+
     return {
         "recommended_id": recommended["id"],
         "recommended_route": recommended,
         "fastest_id": fastest_route["id"],
         "shortest_id": shortest_route["id"],
         "cleanest_id": cleanest_route["id"],
+        "rl_evaluation": rl_res,
         "routes": analyzed_routes,
         "disclaimer": "This environmental route score provides general guidance based on available AQI data and your preferences. It is not a medical diagnosis or treatment advice."
     }

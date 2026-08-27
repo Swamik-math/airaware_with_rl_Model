@@ -12,8 +12,12 @@ def _fallback_aqi(lat: float, lon: float) -> int:
 
 
 def get_aqi_for_point(lat: float, lon: float) -> Dict:
-    token = current_app.config.get("AQI_API_TOKEN", "")
-    base_url = current_app.config.get("AQI_API_URL", "")
+    from flask import has_app_context
+    token = ""
+    base_url = ""
+    if has_app_context():
+        token = current_app.config.get("AQI_API_TOKEN", "")
+        base_url = current_app.config.get("AQI_API_URL", "")
 
     if not token or not base_url:
         value = _fallback_aqi(lat, lon)

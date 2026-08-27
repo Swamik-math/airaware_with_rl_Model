@@ -27,3 +27,16 @@ def test_pick_route_indexes_shortest_uses_min_distance():
     assert shortest_idx == 1
     assert fastest_idx == 2
     assert healthiest_idx == 0
+
+
+def test_rl_route_optimizer():
+    from app.services.rl_optimizer_service import rl_evaluate_routes
+    routes = [
+        {"id": "route_1", "distance_km": 5.0, "duration_min": 20, "coordinates": [[12.97, 77.59], [12.98, 77.60]]},
+        {"id": "route_2", "distance_km": 6.0, "duration_min": 22, "coordinates": [[12.97, 77.59], [12.96, 77.61]]}
+    ]
+    res = rl_evaluate_routes(routes, {"air_sensitivity": "High", "route_priority": "Health First"})
+    assert res is not None
+    assert "model" in res
+    assert res["selected_route_id"] in ["route_1", "route_2"]
+
