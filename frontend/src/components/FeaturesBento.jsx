@@ -12,7 +12,7 @@ export default function FeaturesBento() {
       description: "Extracts real-time atmospheric PM2.5 and PM10 metrics from AQICN station feeds, mapping environmental toxicity onto individual road segments.",
       stat: "1,200+ Stations",
       accent: "from-cyan-500/20 to-blue-500/10",
-      iconColor: "text-cyan-400"
+      iconColor: "text-amber-400"
     },
     {
       id: "osm",
@@ -22,8 +22,8 @@ export default function FeaturesBento() {
       title: "Overpass OSM Graph",
       description: "Generates high-fidelity road network edges from OpenStreetMap, computing precise node distances and intersection traversal penalties.",
       stat: "OSM Network",
-      accent: "from-emerald-500/20 to-teal-500/10",
-      iconColor: "text-emerald-400"
+      accent: "from-yellow-500/20 to-yellow-500/10",
+      iconColor: "text-yellow-400"
     },
     {
       id: "cost",
@@ -55,7 +55,7 @@ export default function FeaturesBento() {
       title: "Exposure Shield",
       description: "Reduces inhaled particulate matter exposure by up to 92% compared to standard shortest paths.",
       stat: "-92% PM2.5",
-      accent: "from-teal-500/20 to-cyan-500/10",
+      accent: "from-teal-500/20 to-amber-600/10",
       iconColor: "text-teal-400"
     },
     {
@@ -66,7 +66,7 @@ export default function FeaturesBento() {
       title: "Route Insights",
       description: "Detailed analytics cards comparing total distance, travel duration, AQI score, and health index.",
       stat: "Real-time Metrics",
-      accent: "from-blue-500/20 to-cyan-500/10",
+      accent: "from-blue-500/20 to-amber-600/10",
       iconColor: "text-blue-400"
     }
   ];
@@ -75,7 +75,7 @@ export default function FeaturesBento() {
     <section id="features" className="matter-features-section">
       <div className="matter-section-header">
         <div className="matter-badge-pill">
-          <Sparkles className="size-3.5 text-cyan-400" />
+          <Sparkles className="size-3.5 text-amber-400" />
           <span>Core Capabilities</span>
         </div>
         <h2 className="matter-section-title">

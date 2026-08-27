@@ -230,9 +230,9 @@ export default function MapView({
           const isHovered = key === hoveredRoute;
           const geometry = resolveRouteGeometry(route, source, destination);
 
-          let strokeColor = "#3b82f6";
-          if (key === "healthiest") strokeColor = "#10b981"; // Bright Green for Healthiest
-          if (key === "fastest") strokeColor = "#f59e0b";   // Orange for Fastest
+          let strokeColor = "#3B82F6";
+          if (key === "healthiest") strokeColor = "#EAB308"; // Mustard Yellow for Healthiest
+          if (key === "fastest") strokeColor = "#F59E0B";   // Warm Gold for Fastest
 
           return (
             <Fragment key={`route-${key}-${animationToken}`}>
@@ -241,12 +241,13 @@ export default function MapView({
                 <Polyline
                   positions={geometry}
                   pathOptions={{
-                    color: key === "healthiest" ? "#34d399" : "#ffffff",
+                    color: key === "healthiest" ? "#FACC15" : "#FFFFFF",
                     weight: key === "healthiest" ? 14 : 10,
-                    opacity: key === "healthiest" ? 0.6 : 0.8
+                    opacity: key === "healthiest" ? 0.7 : 0.8
                   }}
                 />
               )}
+
 
               {/* Main Polyline */}
               <Polyline

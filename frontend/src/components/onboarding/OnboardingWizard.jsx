@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ShieldAlert, HeartPulse, Sparkles, Check, ArrowRight, CheckCircle2, ChevronLeft } from "lucide-react";
+import { ShieldAlert, Sparkles, Check, ChevronLeft } from "lucide-react";
 import { updateHealthProfile } from "../../api/client";
 
 export default function OnboardingWizard({ onComplete }) {
@@ -44,7 +44,6 @@ export default function OnboardingWizard({ onComplete }) {
       await updateHealthProfile(profilePayload);
       onComplete(profilePayload);
     } catch (err) {
-      // Fallback complete even if network delay
       onComplete(profilePayload);
     } finally {
       setSaving(false);
@@ -53,31 +52,31 @@ export default function OnboardingWizard({ onComplete }) {
 
   return (
     <div className="min-h-[85vh] flex items-center justify-center px-4 py-12">
-      <div className="w-full max-w-2xl glass-panel p-8 lg:p-12 rounded-3xl border-white/10 shadow-2xl bg-gray-950/70 relative">
+      <div className="w-full max-w-2xl vayu-panel p-6 lg:p-10 bg-[#0D2521] border-[#23443B] relative">
         {/* Step Indicator Progress bar */}
-        <div className="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
+        <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#23443B]">
           <div>
-            <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">Health Profile Personalization</span>
-            <p className="text-xs text-gray-400 mt-0.5">Help us optimize route recommendations for your needs.</p>
+            <span className="text-[10px] font-bold text-[#B7D96B] uppercase tracking-wider">Environmental Profile Setup</span>
+            <p className="text-xs text-[#9AAEA5] mt-0.5">Customize environmental optimization parameters.</p>
           </div>
-          <div className="flex items-center gap-1.5 bg-gray-900 px-3 py-1.5 rounded-full border border-white/10 text-xs font-bold text-emerald-400">
+          <div className="flex items-center gap-1 bg-[#102C27] px-3 py-1 rounded-md border border-[#23443B] text-xs font-bold text-[#B7D96B]">
             <span>0{step}</span>
-            <span className="text-gray-600">/</span>
-            <span className="text-gray-400">04</span>
+            <span className="text-[#23443B]">/</span>
+            <span className="text-[#9AAEA5]">04</span>
           </div>
         </div>
 
         {/* STEP 1: Health Conditions Questionnaire */}
         {step === 1 && (
-          <div className="space-y-6 animate-fadeIn">
+          <div className="space-y-5">
             <div>
-              <h2 className="text-2xl font-bold text-white">Help us understand your environment preferences.</h2>
-              <p className="text-sm text-gray-300 mt-2">
-                Select any conditions or sensitivities you'd like us to consider when evaluating environmental exposure.
+              <h2 className="text-xl font-extrabold font-heading text-[#F1F5EE]">Health Sensitivity Preferences</h2>
+              <p className="text-xs text-[#9AAEA5] mt-1">
+                Select any sensitivities to factor into environmental penalty calculations.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {[
                 "Asthma",
                 "COPD",
@@ -94,30 +93,29 @@ export default function OnboardingWizard({ onComplete }) {
                     key={cond}
                     type="button"
                     onClick={() => toggleCondition(cond)}
-                    className={`p-3.5 rounded-xl border text-left text-sm font-medium transition-all flex items-center justify-between ${
+                    className={`p-3 rounded-lg border text-left text-xs font-medium transition-all flex items-center justify-between ${
                       isSelected
-                        ? "bg-emerald-500/20 border-emerald-500 text-white shadow-md shadow-emerald-500/10"
-                        : "bg-gray-900/60 border-white/10 text-gray-300 hover:border-white/20"
+                        ? "bg-[#153A33] border-[#B7D96B] text-[#F1F5EE]"
+                        : "bg-[#102C27] border-[#23443B] text-[#9AAEA5] hover:border-[#355E52]"
                     }`}
                   >
                     <span>{cond}</span>
-                    {isSelected && <Check className="w-4 h-4 text-emerald-400" />}
+                    {isSelected && <Check className="w-3.5 h-3.5 text-[#B7D96B]" />}
                   </button>
                 );
               })}
             </div>
 
-            {/* Medical Disclaimer */}
-            <div className="p-3.5 rounded-xl bg-gray-900/80 border border-white/10 flex items-start gap-3 text-xs text-gray-400">
-              <ShieldAlert className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+            <div className="p-3 rounded-lg bg-[#071A17] border border-[#23443B] flex items-start gap-2.5 text-xs text-[#9AAEA5]">
+              <ShieldAlert className="w-4 h-4 text-[#E3C85A] flex-shrink-0 mt-0.5" />
               <span>
-                This feature provides general environmental guidance based on available AQI metrics and is not a medical diagnosis or substitute for professional medical advice.
+                Provides non-medical environmental guidance based on regional air quality indicators.
               </span>
             </div>
 
             <button
               onClick={() => setStep(2)}
-              className="w-full btn-primary py-3 rounded-xl justify-center font-bold"
+              className="w-full btn-primary py-2.5 rounded-lg justify-center font-bold text-xs"
             >
               Continue to Step 2
             </button>
@@ -126,36 +124,36 @@ export default function OnboardingWizard({ onComplete }) {
 
         {/* STEP 2: Air Quality Sensitivity */}
         {step === 2 && (
-          <div className="space-y-6 animate-fadeIn">
+          <div className="space-y-5">
             <div>
-              <h2 className="text-2xl font-bold text-white">How sensitive are you to poor air quality?</h2>
-              <p className="text-sm text-gray-300 mt-2">
-                This helps us tune the environmental penalty score when comparing route alternatives.
+              <h2 className="text-xl font-extrabold font-heading text-[#F1F5EE]">Air Quality Sensitivity Level</h2>
+              <p className="text-xs text-[#9AAEA5] mt-1">
+                Sets the environmental penalty weight when comparing route alternatives.
               </p>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               {[
-                { label: "Low", desc: "Rarely affected by urban dust or moderate smog." },
-                { label: "Moderate", desc: "Notice slight discomfort during high pollution days." },
-                { label: "High", desc: "Strongly affected by poor air quality; require cleaner routes." },
-                { label: "Not sure", desc: "Use standard environmental sensitivity baseline." }
+                { label: "Low", desc: "Minimal impact from urban dust or light smog." },
+                { label: "Moderate", desc: "Noticeable discomfort on high AQI days." },
+                { label: "High", desc: "Strongly affected by pollution; require cleanest paths." },
+                { label: "Not sure", desc: "Use balanced environmental baseline." }
               ].map((opt) => (
                 <button
                   key={opt.label}
                   type="button"
                   onClick={() => setSensitivity(opt.label)}
-                  className={`w-full p-4 rounded-xl border text-left transition-all flex items-center justify-between ${
+                  className={`w-full p-3.5 rounded-lg border text-left transition-all flex items-center justify-between ${
                     sensitivity === opt.label
-                      ? "bg-emerald-500/20 border-emerald-500 text-white shadow-md"
-                      : "bg-gray-900/60 border-white/10 text-gray-300 hover:border-white/20"
+                      ? "bg-[#153A33] border-[#B7D96B] text-[#F1F5EE]"
+                      : "bg-[#102C27] border-[#23443B] text-[#9AAEA5] hover:border-[#355E52]"
                   }`}
                 >
                   <div>
-                    <span className="font-bold text-sm text-white">{opt.label} Sensitivity</span>
-                    <p className="text-xs text-gray-400 mt-0.5">{opt.desc}</p>
+                    <span className="font-bold text-xs text-[#F1F5EE]">{opt.label} Sensitivity</span>
+                    <p className="text-[11px] text-[#9AAEA5] mt-0.5">{opt.desc}</p>
                   </div>
-                  {sensitivity === opt.label && <Check className="w-5 h-5 text-emerald-400" />}
+                  {sensitivity === opt.label && <Check className="w-4 h-4 text-[#B7D96B]" />}
                 </button>
               ))}
             </div>
@@ -163,13 +161,13 @@ export default function OnboardingWizard({ onComplete }) {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setStep(1)}
-                className="btn-secondary py-3 px-5 rounded-xl font-semibold"
+                className="btn-secondary py-2 px-4 rounded-lg font-semibold text-xs"
               >
-                <ChevronLeft className="w-4 h-4" /> Back
+                <ChevronLeft className="w-3.5 h-3.5" /> Back
               </button>
               <button
                 onClick={() => setStep(3)}
-                className="w-full btn-primary py-3 rounded-xl justify-center font-bold"
+                className="w-full btn-primary py-2.5 rounded-lg justify-center font-bold text-xs"
               >
                 Continue to Step 3
               </button>
@@ -179,22 +177,22 @@ export default function OnboardingWizard({ onComplete }) {
 
         {/* STEP 3: Priority Pollutants */}
         {step === 3 && (
-          <div className="space-y-6 animate-fadeIn">
+          <div className="space-y-5">
             <div>
-              <h2 className="text-2xl font-bold text-white">Are there pollutants you'd like us to prioritize avoiding?</h2>
-              <p className="text-sm text-gray-300 mt-2">
-                Select any specific pollutants your profile should give extra weight to.
+              <h2 className="text-xl font-extrabold font-heading text-[#F1F5EE]">Priority Pollutants</h2>
+              <p className="text-xs text-[#9AAEA5] mt-1">
+                Select target pollutants to avoid along travel corridors.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2.5">
               {[
-                { name: "PM2.5", desc: "Fine inhalable particles" },
+                { name: "PM2.5", desc: "Fine particulate matter" },
                 { name: "PM10", desc: "Coarse dust & pollen" },
                 { name: "NO₂", desc: "Nitrogen dioxide exhaust" },
                 { name: "O₃", desc: "Ground-level ozone" },
                 { name: "CO", desc: "Carbon monoxide" },
-                { name: "General pollution", desc: "Overall composite AQI" }
+                { name: "General pollution", desc: "Composite regional AQI" }
               ].map((pol) => {
                 const isSelected = pollutants.includes(pol.name);
                 return (
@@ -202,17 +200,17 @@ export default function OnboardingWizard({ onComplete }) {
                     key={pol.name}
                     type="button"
                     onClick={() => togglePollutant(pol.name)}
-                    className={`p-3.5 rounded-xl border text-left transition-all ${
+                    className={`p-3 rounded-lg border text-left transition-all ${
                       isSelected
-                        ? "bg-emerald-500/20 border-emerald-500 text-white"
-                        : "bg-gray-900/60 border-white/10 text-gray-300 hover:border-white/20"
+                        ? "bg-[#153A33] border-[#B7D96B] text-[#F1F5EE]"
+                        : "bg-[#102C27] border-[#23443B] text-[#9AAEA5] hover:border-[#355E52]"
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <span className="font-bold text-sm text-white">{pol.name}</span>
-                      {isSelected && <Check className="w-4 h-4 text-emerald-400" />}
+                      <span className="font-bold text-xs text-[#F1F5EE]">{pol.name}</span>
+                      {isSelected && <Check className="w-3.5 h-3.5 text-[#B7D96B]" />}
                     </div>
-                    <p className="text-xs text-gray-400 mt-1">{pol.desc}</p>
+                    <p className="text-[10px] text-[#9AAEA5] mt-0.5">{pol.desc}</p>
                   </button>
                 );
               })}
@@ -221,13 +219,13 @@ export default function OnboardingWizard({ onComplete }) {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setStep(2)}
-                className="btn-secondary py-3 px-5 rounded-xl font-semibold"
+                className="btn-secondary py-2 px-4 rounded-lg font-semibold text-xs"
               >
-                <ChevronLeft className="w-4 h-4" /> Back
+                <ChevronLeft className="w-3.5 h-3.5" /> Back
               </button>
               <button
                 onClick={() => setStep(4)}
-                className="w-full btn-primary py-3 rounded-xl justify-center font-bold"
+                className="w-full btn-primary py-2.5 rounded-lg justify-center font-bold text-xs"
               >
                 Continue to Final Step
               </button>
@@ -237,71 +235,71 @@ export default function OnboardingWizard({ onComplete }) {
 
         {/* STEP 4: Route Priority */}
         {step === 4 && (
-          <div className="space-y-6 animate-fadeIn">
+          <div className="space-y-5">
             <div>
-              <h2 className="text-2xl font-bold text-white">What matters most when choosing a route?</h2>
-              <p className="text-sm text-gray-300 mt-2">
-                This dictates the trade-off balance between environmental quality, travel time, and distance.
+              <h2 className="text-xl font-extrabold font-heading text-[#F1F5EE]">Route Optimization Objective</h2>
+              <p className="text-xs text-[#9AAEA5] mt-1">
+                Balance environmental quality against travel duration.
               </p>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               {[
-                { title: "Health First", tag: "60% Air Quality Weight", desc: "Strongly prioritize cleaner routes even if travel time increases." },
-                { title: "Balanced", tag: "40% Air Quality Weight", desc: "Balance environmental cleanliness, travel time, and distance." },
-                { title: "Time First", tag: "20% Air Quality Weight", desc: "Prefer faster routes unless environmental exposure becomes significantly worse." }
+                { title: "Health First", tag: "60% Clean Air Weight", desc: "Prioritize cleanest routes even with slightly longer travel time." },
+                { title: "Balanced", tag: "40% Clean Air Weight", desc: "Equal balance between clean air and travel time." },
+                { title: "Time First", tag: "20% Clean Air Weight", desc: "Prefer fastest route unless AQI is severely hazardous." }
               ].map((prio) => (
                 <button
                   key={prio.title}
                   type="button"
                   onClick={() => setRoutePriority(prio.title)}
-                  className={`w-full p-4 rounded-xl border text-left transition-all flex items-center justify-between ${
+                  className={`w-full p-3.5 rounded-lg border text-left transition-all flex items-center justify-between ${
                     routePriority === prio.title
-                      ? "bg-emerald-500/20 border-emerald-500 text-white shadow-lg shadow-emerald-500/10"
-                      : "bg-gray-900/60 border-white/10 text-gray-300 hover:border-white/20"
+                      ? "bg-[#153A33] border-[#B7D96B] text-[#F1F5EE]"
+                      : "bg-[#102C27] border-[#23443B] text-[#9AAEA5] hover:border-[#355E52]"
                   }`}
                 >
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="font-bold text-sm text-white">{prio.title}</span>
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 font-semibold border border-emerald-500/30">
+                      <span className="font-bold text-xs text-[#F1F5EE]">{prio.title}</span>
+                      <span className="text-[9px] px-2 py-0.5 rounded bg-[#B7D96B]/20 text-[#B7D96B] font-extrabold">
                         {prio.tag}
                       </span>
                     </div>
-                    <p className="text-xs text-gray-400 mt-1">{prio.desc}</p>
+                    <p className="text-[11px] text-[#9AAEA5] mt-0.5">{prio.desc}</p>
                   </div>
-                  {routePriority === prio.title && <Check className="w-5 h-5 text-emerald-400" />}
+                  {routePriority === prio.title && <Check className="w-4 h-4 text-[#B7D96B]" />}
                 </button>
               ))}
             </div>
 
             {/* Profile Summary Card */}
-            <div className="p-4 rounded-2xl bg-gray-900/90 border border-emerald-500/30 space-y-2 text-xs">
-              <div className="flex items-center gap-2 text-emerald-400 font-bold">
+            <div className="p-3.5 rounded-lg bg-[#102C27] border border-[#23443B] space-y-1.5 text-xs">
+              <div className="flex items-center gap-2 text-[#B7D96B] font-bold">
                 <Sparkles className="w-4 h-4" />
-                <span>Your Personalized Profile Summary</span>
+                <span>Profile Configuration</span>
               </div>
-              <div className="grid grid-cols-2 gap-2 text-gray-300 pt-1">
-                <div>Sensitivity: <strong className="text-white">{sensitivity}</strong></div>
-                <div>Priority: <strong className="text-white">{routePriority}</strong></div>
-                <div>Pollutants: <strong className="text-white">{pollutants.join(", ")}</strong></div>
-                <div>Conditions: <strong className="text-white">{selectedConditions.length ? selectedConditions.join(", ") : "None specified"}</strong></div>
+              <div className="grid grid-cols-2 gap-2 text-[#9AAEA5] pt-0.5 text-[11px]">
+                <div>Sensitivity: <strong className="text-[#F1F5EE]">{sensitivity}</strong></div>
+                <div>Priority: <strong className="text-[#F1F5EE]">{routePriority}</strong></div>
+                <div>Pollutants: <strong className="text-[#F1F5EE]">{pollutants.join(", ")}</strong></div>
+                <div>Sensitivities: <strong className="text-[#F1F5EE]">{selectedConditions.length ? selectedConditions.join(", ") : "None"}</strong></div>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setStep(3)}
-                className="btn-secondary py-3 px-5 rounded-xl font-semibold"
+                className="btn-secondary py-2 px-4 rounded-lg font-semibold text-xs"
               >
-                <ChevronLeft className="w-4 h-4" /> Back
+                <ChevronLeft className="w-3.5 h-3.5" /> Back
               </button>
               <button
                 onClick={handleFinish}
                 disabled={saving}
-                className="w-full btn-primary py-3.5 rounded-xl justify-center font-bold text-base shadow-xl shadow-emerald-500/30"
+                className="w-full btn-primary py-2.5 rounded-lg justify-center font-bold text-xs"
               >
-                {saving ? "Saving Profile..." : "Find My First Route"}
+                {saving ? "Saving Profile..." : "Explore Clean Routes"}
               </button>
             </div>
           </div>
@@ -310,3 +308,4 @@ export default function OnboardingWizard({ onComplete }) {
     </div>
   );
 }
+

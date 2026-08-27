@@ -107,32 +107,32 @@ export default function DashboardView({ user, profile, sectors = [] }) {
   const selectedRouteObj = routesResult?.routes?.find(r => r.id === selectedRouteId || r.type === selectedRouteId) || routesResult?.recommended_route;
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 lg:px-8 py-6 space-y-8">
+    <div className="w-full max-w-7xl mx-auto px-4 lg:px-8 py-6 space-y-6">
       {/* PERSONALIZED GREETING & HEADER */}
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 glass-panel p-6 rounded-2xl border-white/10">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 vayu-panel p-5 bg-[#0D2521] border-[#23443B]">
         <div>
-          <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">AIR-AWARE Intelligent Dashboard</span>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+          <span className="text-[10px] font-bold text-[#B7D96B] uppercase tracking-wider">Air-Aware Navigation Engine</span>
+          <h1 className="text-2xl font-extrabold font-heading text-[#F1F5EE] mt-0.5">
             Good evening, {user?.name || "Explorer"}.
           </h1>
-          <p className="text-sm text-gray-300">
-            Based on your <strong className="text-emerald-400">{profile?.route_priority || "Health First"}</strong> preference, we'll prioritize cleaner air corridors.
+          <p className="text-xs text-[#9AAEA5]">
+            Optimizing routes prioritizing <strong className="text-[#B7D96B]">{profile?.route_priority || "Health First"}</strong> airflow corridors.
           </p>
         </div>
 
         {/* Quick Stats Pills */}
-        <div className="flex items-center gap-3">
-          <div className="px-3.5 py-2 rounded-xl bg-gray-900 border border-white/10 text-center">
-            <span className="block text-[10px] text-gray-400 font-bold uppercase">Routes Analyzed</span>
-            <span className="text-lg font-black text-white">24</span>
+        <div className="flex items-center gap-2.5">
+          <div className="px-3 py-1.5 rounded-lg bg-[#102C27] border border-[#23443B] text-center">
+            <span className="block text-[9px] text-[#9AAEA5] font-bold uppercase">Routes Evaluated</span>
+            <span className="text-base font-extrabold font-heading text-[#F1F5EE]">24</span>
           </div>
-          <div className="px-3.5 py-2 rounded-xl bg-emerald-950/40 border border-emerald-500/30 text-center">
-            <span className="block text-[10px] text-emerald-400 font-bold uppercase">Exposure Reduction</span>
-            <span className="text-lg font-black text-emerald-400">18%</span>
+          <div className="px-3 py-1.5 rounded-lg bg-[#102C27] border border-[#B7D96B]/30 text-center">
+            <span className="block text-[9px] text-[#B7D96B] font-bold uppercase">Exposure Savings</span>
+            <span className="text-base font-extrabold font-heading text-[#B7D96B]">18%</span>
           </div>
-          <div className="px-3.5 py-2 rounded-xl bg-gray-900 border border-white/10 text-center">
-            <span className="block text-[10px] text-gray-400 font-bold uppercase">Avg AQI</span>
-            <span className="text-lg font-black text-cyan-400">42</span>
+          <div className="px-3 py-1.5 rounded-lg bg-[#102C27] border border-[#23443B] text-center">
+            <span className="block text-[9px] text-[#9AAEA5] font-bold uppercase">Avg Regional AQI</span>
+            <span className="text-base font-extrabold font-heading text-[#78C091]">42</span>
           </div>
         </div>
       </div>
@@ -140,19 +140,19 @@ export default function DashboardView({ user, profile, sectors = [] }) {
       {/* DOCKED SPLIT MAIN LAYOUT */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* LEFT SEARCH & RECOMMENDATION SIDEBAR */}
-        <div className="lg:col-span-5 space-y-6">
+        <div className="lg:col-span-5 space-y-5">
           {/* Search Controls */}
-          <div className="glass-panel p-6 rounded-2xl border-white/10 space-y-4 shadow-xl relative z-20">
+          <div className="vayu-panel p-5 bg-[#0D2521] border-[#23443B] space-y-3 relative z-20">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-gray-300 uppercase tracking-wider">Plan Your Route</span>
+              <span className="text-[11px] font-bold text-[#9AAEA5] uppercase tracking-wider">Route Planner</span>
 
               {/* Mode Toggle Pills */}
-              <div className="flex items-center gap-1 bg-gray-900 p-1 rounded-lg border border-white/10">
+              <div className="flex items-center gap-1 bg-[#102C27] p-1 rounded-lg border border-[#23443B]">
                 <button
                   type="button"
                   onClick={() => setMode("walking")}
-                  className={`p-1.5 rounded-md text-xs font-semibold flex items-center gap-1 transition-all ${
-                    mode === "walking" ? "bg-emerald-500 text-white" : "text-gray-400 hover:text-white"
+                  className={`p-1.5 rounded text-xs font-semibold flex items-center gap-1 transition-all ${
+                    mode === "walking" ? "bg-[#B7D96B] text-[#071A17]" : "text-[#9AAEA5] hover:text-[#F1F5EE]"
                   }`}
                   title="Walking Mode"
                 >
@@ -161,8 +161,8 @@ export default function DashboardView({ user, profile, sectors = [] }) {
                 <button
                   type="button"
                   onClick={() => setMode("cycling")}
-                  className={`p-1.5 rounded-md text-xs font-semibold flex items-center gap-1 transition-all ${
-                    mode === "cycling" ? "bg-emerald-500 text-white" : "text-gray-400 hover:text-white"
+                  className={`p-1.5 rounded text-xs font-semibold flex items-center gap-1 transition-all ${
+                    mode === "cycling" ? "bg-[#B7D96B] text-[#071A17]" : "text-[#9AAEA5] hover:text-[#F1F5EE]"
                   }`}
                   title="Cycling Mode"
                 >
@@ -171,8 +171,8 @@ export default function DashboardView({ user, profile, sectors = [] }) {
                 <button
                   type="button"
                   onClick={() => setMode("driving")}
-                  className={`p-1.5 rounded-md text-xs font-semibold flex items-center gap-1 transition-all ${
-                    mode === "driving" ? "bg-emerald-500 text-white" : "text-gray-400 hover:text-white"
+                  className={`p-1.5 rounded text-xs font-semibold flex items-center gap-1 transition-all ${
+                    mode === "driving" ? "bg-[#B7D96B] text-[#071A17]" : "text-[#9AAEA5] hover:text-[#F1F5EE]"
                   }`}
                   title="Driving Mode"
                 >
@@ -182,11 +182,11 @@ export default function DashboardView({ user, profile, sectors = [] }) {
             </div>
 
             <form onSubmit={handleCalculateRoutes} className="space-y-3">
-              {/* Start Location Input & Dropdown */}
+              {/* Start Location Input */}
               <div className="relative">
-                <label className="block text-[11px] font-bold text-gray-400 uppercase mb-1">Start Location</label>
+                <label className="block text-[10px] font-bold text-[#9AAEA5] uppercase mb-1">Start Location</label>
                 <div className="relative">
-                  <MapPin className="w-4 h-4 text-emerald-400 absolute left-3 top-3" />
+                  <MapPin className="w-3.5 h-3.5 text-[#B7D96B] absolute left-3 top-2.5" />
                   <input
                     type="text"
                     value={sourceText}
@@ -196,18 +196,18 @@ export default function DashboardView({ user, profile, sectors = [] }) {
                     }}
                     onChange={(e) => setSourceText(e.target.value)}
                     placeholder="Type start location..."
-                    className="w-full bg-gray-900 border border-white/10 rounded-xl pl-9 pr-16 py-2 text-sm text-white focus:outline-none focus:border-emerald-500"
+                    className="w-full bg-[#071A17] border border-[#23443B] rounded-lg pl-8 pr-14 py-1.5 text-xs text-[#F1F5EE] focus:outline-none focus:border-[#B7D96B]"
                   />
                   <button
                     type="button"
                     onClick={() => setPinMode("source")}
-                    className="absolute right-2 top-1.5 px-2 py-1 bg-gray-800 hover:bg-gray-700 text-gray-300 text-[10px] font-bold rounded-lg"
+                    className="absolute right-1.5 top-1 px-2 py-0.5 bg-[#102C27] hover:bg-[#153A33] text-[#9AAEA5] text-[10px] font-bold rounded"
                   >
                     Pin
                   </button>
                 </div>
                 {sourceSuggestions.length > 0 && (
-                  <div className="absolute top-full left-0 right-0 z-50 bg-gray-900 border border-emerald-500/40 rounded-xl mt-1 max-h-48 overflow-y-auto shadow-2xl">
+                  <div className="absolute top-full left-0 right-0 z-50 bg-[#0D2521] border border-[#23443B] rounded-lg mt-1 max-h-48 overflow-y-auto shadow-xl">
                     {sourceSuggestions.map((s, i) => (
                       <div
                         key={i}
@@ -217,21 +217,21 @@ export default function DashboardView({ user, profile, sectors = [] }) {
                           setSourcePoint({ lat: s.lat, lon: s.lon });
                           setSourceSuggestions([]);
                         }}
-                        className="p-3 hover:bg-emerald-500/20 text-xs text-gray-100 cursor-pointer border-b border-white/5 flex items-center gap-2 font-medium"
+                        className="p-2.5 hover:bg-[#102C27] text-xs text-[#F1F5EE] cursor-pointer border-b border-[#23443B]/40 flex items-center gap-2"
                       >
-                        <MapPin className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
-                        <span>{s.display_name}</span>
+                        <MapPin className="w-3 h-3 text-[#B7D96B] flex-shrink-0" />
+                        <span className="truncate">{s.display_name}</span>
                       </div>
                     ))}
                   </div>
                 )}
               </div>
 
-              {/* Destination Input & Dropdown */}
+              {/* Destination Input */}
               <div className="relative">
-                <label className="block text-[11px] font-bold text-gray-400 uppercase mb-1">Destination</label>
+                <label className="block text-[10px] font-bold text-[#9AAEA5] uppercase mb-1">Destination</label>
                 <div className="relative">
-                  <Navigation className="w-4 h-4 text-cyan-400 absolute left-3 top-3" />
+                  <Navigation className="w-3.5 h-3.5 text-[#6FBF9A] absolute left-3 top-2.5" />
                   <input
                     type="text"
                     value={destinationText}
@@ -240,19 +240,19 @@ export default function DashboardView({ user, profile, sectors = [] }) {
                       setDestSuggestions(res);
                     }}
                     onChange={(e) => setDestinationText(e.target.value)}
-                    placeholder="Type destination location..."
-                    className="w-full bg-gray-900 border border-white/10 rounded-xl pl-9 pr-16 py-2 text-sm text-white focus:outline-none focus:border-emerald-500"
+                    placeholder="Type destination..."
+                    className="w-full bg-[#071A17] border border-[#23443B] rounded-lg pl-8 pr-14 py-1.5 text-xs text-[#F1F5EE] focus:outline-none focus:border-[#B7D96B]"
                   />
                   <button
                     type="button"
                     onClick={() => setPinMode("destination")}
-                    className="absolute right-2 top-1.5 px-2 py-1 bg-gray-800 hover:bg-gray-700 text-gray-300 text-[10px] font-bold rounded-lg"
+                    className="absolute right-1.5 top-1 px-2 py-0.5 bg-[#102C27] hover:bg-[#153A33] text-[#9AAEA5] text-[10px] font-bold rounded"
                   >
                     Pin
                   </button>
                 </div>
                 {destSuggestions.length > 0 && (
-                  <div className="absolute top-full left-0 right-0 z-50 bg-gray-900 border border-cyan-500/40 rounded-xl mt-1 max-h-48 overflow-y-auto shadow-2xl">
+                  <div className="absolute top-full left-0 right-0 z-50 bg-[#0D2521] border border-[#23443B] rounded-lg mt-1 max-h-48 overflow-y-auto shadow-xl">
                     {destSuggestions.map((s, i) => (
                       <div
                         key={i}
@@ -262,10 +262,10 @@ export default function DashboardView({ user, profile, sectors = [] }) {
                           setDestinationPoint({ lat: s.lat, lon: s.lon });
                           setDestSuggestions([]);
                         }}
-                        className="p-3 hover:bg-cyan-500/20 text-xs text-gray-100 cursor-pointer border-b border-white/5 flex items-center gap-2 font-medium"
+                        className="p-2.5 hover:bg-[#102C27] text-xs text-[#F1F5EE] cursor-pointer border-b border-[#23443B]/40 flex items-center gap-2"
                       >
-                        <Navigation className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0" />
-                        <span>{s.display_name}</span>
+                        <Navigation className="w-3 h-3 text-[#6FBF9A] flex-shrink-0" />
+                        <span className="truncate">{s.display_name}</span>
                       </div>
                     ))}
                   </div>
@@ -275,77 +275,77 @@ export default function DashboardView({ user, profile, sectors = [] }) {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full btn-primary py-3 rounded-xl justify-center font-bold text-sm shadow-lg shadow-emerald-500/20 mt-2"
+                className="w-full btn-primary py-2.5 rounded-lg justify-center text-xs mt-1"
               >
-                {loading ? loadingStage : "Find Healthiest Route"}
+                {loading ? loadingStage : "Calculate Cleanest Route"}
               </button>
             </form>
 
-            {error && <p className="text-xs text-red-400 bg-red-500/10 p-2.5 rounded-lg border border-red-500/20">{error}</p>}
+            {error && <p className="text-xs text-[#D96B63] bg-[#D96B63]/10 p-2 rounded border border-[#D96B63]/20">{error}</p>}
           </div>
 
           {/* PERSONALIZED RECOMMENDATION CARD */}
           {routesResult && routesResult.recommended_route && (
-            <div className="glass-panel p-6 rounded-2xl border-emerald-500/40 bg-gradient-to-br from-emerald-950/40 via-gray-900 to-gray-950 shadow-2xl space-y-4">
+            <div className="vayu-panel p-5 bg-[#0D2521] border-[#B7D96B]/50 space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">Recommended for you</span>
-                  <span className="text-[10px] bg-emerald-500/30 text-emerald-300 font-extrabold px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] font-bold text-[#B7D96B] uppercase tracking-wider">Top Recommendation</span>
+                  <span className="text-[9px] bg-[#B7D96B]/20 text-[#B7D96B] font-extrabold px-2 py-0.5 rounded">
                     HEALTHIEST
                   </span>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">
+                <div className="w-7 h-7 rounded-lg bg-[#B7D96B]/20 text-[#B7D96B] flex items-center justify-center font-extrabold font-heading text-xs">
                   {routesResult.recommended_route.health_score}
                 </div>
               </div>
 
               <div>
-                <h3 className="text-xl font-extrabold text-white">
+                <h3 className="text-base font-extrabold font-heading text-[#F1F5EE]">
                   {routesResult.recommended_route.name}
                 </h3>
-                <p className="text-xs text-emerald-300 mt-0.5">
-                  {routesResult.recommended_route.distance_km} km • {routesResult.recommended_route.duration_min} min • Avg AQI {routesResult.recommended_route.avg_aqi}
+                <p className="text-xs text-[#9AAEA5] mt-0.5">
+                  {routesResult.recommended_route.distance_km} km • {routesResult.recommended_route.duration_min} min • Avg AQI <strong className="text-[#78C091]">{routesResult.recommended_route.avg_aqi}</strong>
                 </p>
               </div>
 
-              <p className="text-xs text-gray-300 leading-relaxed bg-gray-900/60 p-3 rounded-xl border border-white/5">
-                "{routesResult.recommended_route.explanation?.summary || "Recommended because it avoids high-AQI segments and better matches your environmental preferences."}"
+              <p className="text-xs text-[#9AAEA5] leading-relaxed bg-[#102C27] p-2.5 rounded-lg border border-[#23443B]">
+                "{routesResult.recommended_route.explanation?.summary || "Minimizes estimated AQI exposure along your route."}"
               </p>
 
               {/* Action Buttons */}
               <div className="grid grid-cols-2 gap-2 pt-1">
                 <button
                   onClick={() => setShowWhyModal(true)}
-                  className="btn-secondary text-xs py-2 px-3 justify-center font-semibold border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/10"
+                  className="btn-secondary text-[11px] py-1.5 px-2.5 justify-center font-semibold"
                 >
-                  <HelpCircle className="w-3.5 h-3.5" />
+                  <HelpCircle className="w-3.5 h-3.5 text-[#B7D96B]" />
                   <span>Why this route?</span>
                 </button>
                 <button
                   onClick={() => setShowCompareModal(true)}
-                  className="btn-secondary text-xs py-2 px-3 justify-center font-semibold border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10"
+                  className="btn-secondary text-[11px] py-1.5 px-2.5 justify-center font-semibold"
                 >
-                  <Layers className="w-3.5 h-3.5" />
-                  <span>Compare Routes</span>
+                  <Layers className="w-3.5 h-3.5 text-[#6FBF9A]" />
+                  <span>Compare All</span>
                 </button>
               </div>
 
               <button
                 onClick={handleSaveCurrentRoute}
-                className="w-full py-2.5 rounded-xl bg-gray-800 hover:bg-gray-700 text-white text-xs font-bold border border-white/10 flex items-center justify-center gap-2 transition-colors"
+                className="w-full py-2 rounded-lg bg-[#102C27] hover:bg-[#153A33] text-[#F1F5EE] text-xs font-semibold border border-[#23443B] flex items-center justify-center gap-2 transition-colors"
               >
-                <Bookmark className="w-4 h-4 text-emerald-400" />
-                <span>Save Route to Favorites</span>
+                <Bookmark className="w-3.5 h-3.5 text-[#B7D96B]" />
+                <span>Save Route</span>
               </button>
 
-              {savedSuccessMsg && <p className="text-center text-xs text-emerald-400 font-bold">{savedSuccessMsg}</p>}
+              {savedSuccessMsg && <p className="text-center text-xs text-[#B7D96B] font-bold">{savedSuccessMsg}</p>}
             </div>
           )}
 
           {/* ROUTE CARDS */}
           {routesResult && routesResult.routes && (
-            <div className="space-y-3">
-              <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">Candidate Route Options</span>
+            <div className="space-y-2">
+              <span className="text-[10px] font-bold text-[#9AAEA5] uppercase tracking-wider">Calculated Alternatives</span>
               {routesResult.routes.map((r) => {
                 const isSelected = selectedRouteId === r.id || selectedRouteId === r.type;
                 return (
@@ -354,31 +354,31 @@ export default function DashboardView({ user, profile, sectors = [] }) {
                     onClick={() => setSelectedRouteId(r.type || r.id)}
                     onMouseEnter={() => setHoveredRouteId(r.id)}
                     onMouseLeave={() => setHoveredRouteId("")}
-                    className={`glass-card p-4 rounded-xl cursor-pointer flex items-center justify-between border transition-all ${
+                    className={`vayu-card p-3.5 rounded-xl cursor-pointer flex items-center justify-between transition-all ${
                       isSelected
-                        ? "bg-emerald-500/15 border-emerald-500/60 shadow-lg shadow-emerald-500/10"
-                        : "border-white/10 hover:border-white/20"
+                        ? "bg-[#153A33] border-[#B7D96B]"
+                        : "bg-[#102C27] border-[#23443B] hover:border-[#355E52]"
                     }`}
                   >
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="font-bold text-sm text-white">{r.name}</span>
+                        <span className="font-bold text-xs text-[#F1F5EE]">{r.name}</span>
                         {r.is_recommended && (
-                          <span className="text-[9px] bg-emerald-500/30 text-emerald-300 font-bold px-2 py-0.5 rounded-full">
-                            RECOMMENDED
+                          <span className="text-[9px] bg-[#B7D96B]/20 text-[#B7D96B] font-bold px-1.5 py-0.5 rounded">
+                            REC
                           </span>
                         )}
                       </div>
-                      <p className="text-xs text-gray-400 mt-1">
-                        {r.distance_km} km • <strong className="text-white">{r.duration_min} min</strong>
+                      <p className="text-[11px] text-[#9AAEA5] mt-0.5">
+                        {r.distance_km} km • <strong className="text-[#F1F5EE]">{r.duration_min} min</strong>
                       </p>
                     </div>
 
                     <div className="text-right">
-                      <span className={`text-lg font-black ${r.avg_aqi <= 50 ? "text-emerald-400" : (r.avg_aqi <= 100 ? "text-yellow-400" : "text-red-400")}`}>
+                      <span className={`text-sm font-extrabold ${r.avg_aqi <= 50 ? "text-[#78C091]" : (r.avg_aqi <= 100 ? "text-[#E3C85A]" : "text-[#D96B63]")}`}>
                         AQI {r.avg_aqi}
                       </span>
-                      <p className="text-[10px] font-bold text-gray-400">Score {r.health_score}/100</p>
+                      <p className="text-[10px] text-[#9AAEA5]">Score {r.health_score}/100</p>
                     </div>
                   </div>
                 );
@@ -386,6 +386,7 @@ export default function DashboardView({ user, profile, sectors = [] }) {
             </div>
           )}
         </div>
+
 
         {/* RIGHT MAP CANVAS */}
         <div className="lg:col-span-7 h-[540px] sticky top-20">

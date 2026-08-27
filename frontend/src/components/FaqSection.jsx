@@ -31,7 +31,7 @@ export default function FaqSection() {
     <section id="faqs" className="matter-faq-section">
       <div className="matter-section-header">
         <div className="matter-badge-pill">
-          <HelpCircle className="size-3.5 text-cyan-400" />
+          <HelpCircle className="size-3.5 text-amber-400" />
           <span>Frequently Asked Questions</span>
         </div>
         <h2 className="matter-section-title">

@@ -29,7 +29,7 @@ export default function HealthRecommendationCard({
     <div className="clean-health-card">
       <div className="health-card-badge-row">
         <div className="rec-badge">
-          <Sparkles className="size-3.5 text-emerald-500" />
+          <Sparkles className="size-3.5 text-yellow-500" />
           <span>✓ RECOMMENDED HEALTHIEST PATH</span>
         </div>
       </div>
@@ -57,16 +57,16 @@ export default function HealthRecommendationCard({
         <div className="health-metrics-box">
           <h3 className="health-title">Healthiest Route Summary</h3>
           <p className="health-specs">
-            <strong>{healthiest.distance_km} km</strong> · <span>{healthiest.duration_min} min</span> · <strong className="text-emerald-500 font-bold">AQI {healthiest.avg_aqi}</strong>
+            <strong>{healthiest.distance_km} km</strong> · <span>{healthiest.duration_min} min</span> · <strong className="text-yellow-500 font-bold">AQI {healthiest.avg_aqi}</strong>
           </p>
           <ul className="benefit-bullets">
             <li>
-              <CheckCircle2 className="size-3.5 text-emerald-500 shrink-0" />
+              <CheckCircle2 className="size-3.5 text-yellow-500 shrink-0" />
               <span>Avoids high-pollution zones</span>
             </li>
             <li>
-              <CheckCircle2 className="size-3.5 text-emerald-500 shrink-0" />
-              <strong className="text-emerald-600 dark:text-emerald-400">{reductionPercent}% lower pollution exposure</strong>
+              <CheckCircle2 className="size-3.5 text-yellow-500 shrink-0" />
+              <strong className="text-emerald-600 dark:text-yellow-400">{reductionPercent}% lower pollution exposure</strong>
             </li>
           </ul>
         </div>
@@ -84,11 +84,11 @@ export default function HealthRecommendationCard({
             <span className="bar-val">78%</span>
           </div>
           <div className="exp-bar-row">
-            <span className="bar-label font-bold text-emerald-500">Healthiest</span>
+            <span className="bar-label font-bold text-yellow-500">Healthiest</span>
             <div className="bar-track">
-              <div className="bar-fill bg-emerald-500" style={{ width: "22%" }} />
+              <div className="bar-fill bg-yellow-500" style={{ width: "22%" }} />
             </div>
-            <span className="bar-val font-bold text-emerald-500">22%</span>
+            <span className="bar-val font-bold text-yellow-500">22%</span>
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@ export default function HealthRecommendationCard({
             onMouseLeave={() => onHoverRoute?.("")}
           >
             <div className="option-head">
-              <span className="option-name text-emerald-500">🟢 Healthiest</span>
+              <span className="option-name text-yellow-500">🟢 Healthiest</span>
               <span className="option-tag">Recommended</span>
             </div>
             <p className="option-stats">{healthiest.distance_km} km · {healthiest.duration_min}m · AQI {healthiest.avg_aqi}</p>

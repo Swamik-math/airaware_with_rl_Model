@@ -22,11 +22,8 @@ export default function HeroSection() {
         {/* Top Grid: Title & Subtitle */}
         <div className="matter-hero-grid">
           <div className="matter-hero-title-col">
-            <div className="matter-badge-pill">
-              <Zap className="size-3.5 text-cyan-400" />
-              <span>Next-Gen Health Navigation</span>
-            </div>
             <h1 className="matter-hero-heading">
+
               Intelligent Low AQI Route Optimization
             </h1>
           </div>
@@ -54,7 +51,7 @@ export default function HeroSection() {
                 <p className="matter-spec-sub">Live AQICN & OSM Overpass</p>
               </div>
               <div className="matter-spec-val">
-                <Activity className="size-5 text-cyan-400" />
+                <Activity className="size-5 text-amber-400" />
                 <span>Real-Time</span>
               </div>
             </div>
@@ -65,7 +62,7 @@ export default function HeroSection() {
                 <p className="matter-spec-sub">Dijkstra & A* Heuristics</p>
               </div>
               <div className="matter-spec-val">
-                <Cpu className="size-5 text-emerald-400" />
+                <Cpu className="size-5 text-yellow-400" />
                 <span>Multi-Weight</span>
               </div>
             </div>
@@ -76,7 +73,7 @@ export default function HeroSection() {
                 <p className="matter-spec-sub">Pollution & Crowd Mitigation</p>
               </div>
               <div className="matter-spec-val">
-                <ShieldCheck className="size-5 text-cyan-300" />
+                <ShieldCheck className="size-5 text-yellow-300" />
                 <span>Up to 92% Reduction</span>
               </div>
             </div>
@@ -86,7 +83,7 @@ export default function HeroSection() {
           <a href="#planner" className="matter-scroll-badge-wrapper" aria-label="Scroll to planner">
             <div className="matter-scroll-badge-circle">
               <div className="matter-scroll-badge-inner">
-                <ArrowDown className="size-6 text-cyan-400 animate-bounce" />
+                <ArrowDown className="size-6 text-amber-400 animate-bounce" />
               </div>
               {/* Circular SVG Text */}
               <svg viewBox="0 0 100 100" className="matter-scroll-badge-text">

@@ -18,7 +18,7 @@ export default function Header({ theme, onToggleTheme, activeSection }) {
           {/* Brand Logo */}
           <a href="#home" className="matter-brand-link">
             <div className="matter-brand-icon">
-              <Navigation className="size-5 text-cyan-400" />
+              <Navigation className="size-5 text-amber-400" />
             </div>
             <span className="matter-brand-text">AirAware</span>
           </a>

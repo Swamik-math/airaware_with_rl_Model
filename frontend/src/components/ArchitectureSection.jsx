@@ -8,7 +8,7 @@ export default function ArchitectureSection() {
     <section id="architecture" className="matter-arch-section">
       <div className="matter-section-header">
         <div className="matter-badge-pill">
-          <Cpu className="size-3.5 text-cyan-400" />
+          <Cpu className="size-3.5 text-amber-400" />
           <span>System Architecture</span>
         </div>
         <h2 className="matter-section-title">
@@ -97,17 +97,17 @@ export default function ArchitectureSection() {
                   </p>
                   <ul className="space-y-2 text-sm text-slate-300">
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 className="size-4 text-cyan-400" /> Guarantees shortest geometric distance
+                      <CheckCircle2 className="size-4 text-amber-400" /> Guarantees shortest geometric distance
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 className="size-4 text-cyan-400" /> Computes minimal time baseline
+                      <CheckCircle2 className="size-4 text-amber-400" /> Computes minimal time baseline
                     </li>
                   </ul>
                 </div>
 
                 <div className="matter-algo-box">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="matter-algo-badge bg-emerald-500/20 text-emerald-400">A* Search with Heuristics</span>
+                    <span className="matter-algo-badge bg-yellow-500/20 text-yellow-400">A* Search with Heuristics</span>
                   </div>
                   <h4 className="text-lg font-bold mb-2">Healthiest Low-Pollution Route</h4>
                   <p className="text-slate-400 text-sm mb-4">
@@ -115,10 +115,10 @@ export default function ArchitectureSection() {
                   </p>
                   <ul className="space-y-2 text-sm text-slate-300">
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 className="size-4 text-emerald-400" /> Dynamic min-max feature scaling
+                      <CheckCircle2 className="size-4 text-yellow-400" /> Dynamic min-max feature scaling
                     </li>
                     <li className="flex items-center gap-2">
-                      <CheckCircle2 className="size-4 text-emerald-400" /> Sub-second heuristic graph search
+                      <CheckCircle2 className="size-4 text-yellow-400" /> Sub-second heuristic graph search
                     </li>
                   </ul>
                 </div>

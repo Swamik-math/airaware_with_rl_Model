@@ -13,30 +13,43 @@
         theme: {
           extend: {
             colors: {
-              emerald: {
-                400: '#34d399',
-                500: '#10b981',
-                600: '#059669',
-              },
-              cyan: {
-                400: '#22d3ee',
-                500: '#06b6d4',
+              vayu: {
+                bg: '#071A17',
+                surface: '#0D2521',
+                card: '#102C27',
+                hover: '#153A33',
+                border: '#23443B',
+                text: '#F1F5EE',
+                muted: '#9AAEA5',
+                accent: '#B7D96B',
+                sec: '#6FBF9A',
+                warm: '#E7C873',
+                good: '#78C091',
+                moderate: '#E3C85A',
+                poor: '#E99A5A',
+                unhealthy: '#D96B63',
               }
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              heading: ['Manrope', 'sans-serif'],
             }
           }
         }
       }
     </script>
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Manrope & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- OpenFreeMap / MapLibre GL CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- MapLibre & Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   </head>
-  <body class="bg-[#0B0F19] text-gray-100 font-sans antialiased">
+  <body class="bg-[#071A17] text-[#F1F5EE] font-sans antialiased">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
+

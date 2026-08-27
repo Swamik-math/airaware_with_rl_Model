@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Settings, ShieldCheck, Trash2, RefreshCw, User, Lock, HeartPulse, Sliders } from "lucide-react";
+import { Settings, ShieldCheck, Trash2, RefreshCw, Sliders } from "lucide-react";
 import { updateHealthProfile } from "../../api/client";
 
 export default function SettingsView({ user, profile, onUpdateProfile, onLogout }) {
@@ -14,37 +14,37 @@ export default function SettingsView({ user, profile, onUpdateProfile, onLogout 
         route_priority: routePriority
       });
       onUpdateProfile(updated.profile);
-      setSavingMsg("Settings saved successfully!");
+      setSavingMsg("Preferences saved successfully!");
       setTimeout(() => setSavingMsg(""), 3000);
     } catch (err) {
-      setSavingMsg("Error saving settings.");
+      setSavingMsg("Error saving preferences.");
     }
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4 py-8 space-y-8">
-      <div className="border-b border-white/10 pb-4">
-        <div className="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wider">
+    <div className="w-full max-w-4xl mx-auto px-4 py-8 space-y-6">
+      <div className="border-b border-[#23443B] pb-4">
+        <div className="flex items-center gap-2 text-[#B7D96B] font-bold text-xs uppercase tracking-wider">
           <Settings className="w-4 h-4" />
-          <span>Application Settings</span>
+          <span>System Settings</span>
         </div>
-        <h1 className="text-3xl font-extrabold text-white mt-1">Profile & Privacy Settings</h1>
+        <h1 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#F1F5EE] mt-1">Profile & Preferences</h1>
       </div>
 
       {/* 1. Health Preferences Settings */}
-      <div className="glass-panel p-6 rounded-2xl border-white/10 space-y-4">
-        <h3 className="text-lg font-bold text-white flex items-center gap-2">
-          <Sliders className="w-5 h-5 text-emerald-400" />
-          <span>Route Optimization Preferences</span>
+      <div className="vayu-panel p-6 bg-[#0D2521] border-[#23443B] space-y-4">
+        <h3 className="text-base font-bold font-heading text-[#F1F5EE] flex items-center gap-2">
+          <Sliders className="w-4 h-4 text-[#B7D96B]" />
+          <span>Route Optimization Tuning</span>
         </h3>
 
-        <div className="space-y-4 pt-2">
+        <div className="space-y-4 pt-1">
           <div>
-            <label className="block text-xs font-semibold text-gray-300 mb-1">Air Quality Sensitivity</label>
+            <label className="block text-[10px] font-bold text-[#9AAEA5] uppercase mb-1">Air Quality Sensitivity</label>
             <select
               value={sensitivity}
               onChange={(e) => setSensitivity(e.target.value)}
-              className="w-full bg-gray-900 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500"
+              className="w-full bg-[#071A17] border border-[#23443B] rounded-lg px-3 py-2 text-xs text-[#F1F5EE] focus:outline-none focus:border-[#B7D96B]"
             >
               <option value="Low">Low Sensitivity</option>
               <option value="Moderate">Moderate Sensitivity</option>
@@ -53,65 +53,68 @@ export default function SettingsView({ user, profile, onUpdateProfile, onLogout 
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-gray-300 mb-1">Default Route Priority</label>
+            <label className="block text-[10px] font-bold text-[#9AAEA5] uppercase mb-1">Default Route Priority</label>
             <select
               value={routePriority}
               onChange={(e) => setRoutePriority(e.target.value)}
-              className="w-full bg-gray-900 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500"
+              className="w-full bg-[#071A17] border border-[#23443B] rounded-lg px-3 py-2 text-xs text-[#F1F5EE] focus:outline-none focus:border-[#B7D96B]"
             >
-              <option value="Health First">Health First (Prioritize cleanest AQI)</option>
-              <option value="Balanced">Balanced (Health + Time + Distance)</option>
+              <option value="Health First">Health First (Prioritize cleanest air)</option>
+              <option value="Balanced">Balanced (Health + Travel Time)</option>
               <option value="Time First">Time First (Prefer fastest route)</option>
             </select>
           </div>
 
-          <button
-            onClick={handleSave}
-            className="btn-primary py-2.5 px-6 rounded-xl font-bold text-xs"
-          >
-            Save Preferences
-          </button>
-          {savingMsg && <span className="ml-3 text-xs font-bold text-emerald-400">{savingMsg}</span>}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={handleSave}
+              className="btn-primary py-2 px-5 rounded-lg text-xs font-bold"
+            >
+              Save Preferences
+            </button>
+            {savingMsg && <span className="text-xs font-bold text-[#B7D96B]">{savingMsg}</span>}
+          </div>
         </div>
       </div>
 
       {/* 2. Privacy & Data Control */}
-      <div className="glass-panel p-6 rounded-2xl border-white/10 space-y-4">
-        <h3 className="text-lg font-bold text-white flex items-center gap-2">
-          <ShieldCheck className="w-5 h-5 text-cyan-400" />
-          <span>Privacy & Sensitive Data Controls</span>
+      <div className="vayu-panel p-6 bg-[#0D2521] border-[#23443B] space-y-4">
+        <h3 className="text-base font-bold font-heading text-[#F1F5EE] flex items-center gap-2">
+          <ShieldCheck className="w-4 h-4 text-[#78C091]" />
+          <span>Privacy & Data Control</span>
         </h3>
 
-        <p className="text-xs text-gray-300">
-          Your health sensitivities are treated as strictly confidential. AIR-AWARE never exposes health preferences in public URLs or third-party APIs.
+        <p className="text-xs text-[#9AAEA5]">
+          Your health sensitivities are strictly confidential. AIR-AWARE never exposes personal health parameters to external ad networks or third parties.
         </p>
 
-        <div className="pt-2 flex flex-wrap gap-3">
+        <div className="pt-1 flex flex-wrap gap-3">
           <button
             onClick={() => alert("Health preferences reset to default.")}
-            className="btn-secondary text-xs py-2 px-4 rounded-xl border-amber-500/30 text-amber-300 hover:bg-amber-500/10"
+            className="btn-secondary text-xs py-2 px-4 rounded-lg font-semibold"
           >
-            <RefreshCw className="w-3.5 h-3.5" />
-            Reset Health Preferences
+            <RefreshCw className="w-3.5 h-3.5 text-[#B7D96B]" />
+            <span>Reset Preferences</span>
           </button>
 
           <button
             onClick={onLogout}
-            className="btn-secondary text-xs py-2 px-4 rounded-xl border-red-500/30 text-red-400 hover:bg-red-500/10"
+            className="py-2 px-4 rounded-lg bg-[#D96B63]/10 hover:bg-[#D96B63]/20 text-[#D96B63] border border-[#D96B63]/30 text-xs font-semibold flex items-center gap-2 transition-colors"
           >
             <Trash2 className="w-3.5 h-3.5" />
-            Clear Data & Sign Out
+            <span>Sign Out</span>
           </button>
         </div>
       </div>
 
       {/* 3. Medical Disclaimer */}
-      <div className="p-4 rounded-2xl bg-gray-900 border border-white/10 text-xs text-gray-400 space-y-1">
-        <p className="font-bold text-gray-300">Medical Disclaimer</p>
+      <div className="p-4 rounded-xl bg-[#071A17] border border-[#23443B] text-xs text-[#9AAEA5] space-y-1">
+        <p className="font-bold text-[#F1F5EE]">Medical Disclaimer</p>
         <p>
-          This application provides general environmental route guidance based on available environmental data and your selected preferences. It is not a medical device and does not provide medical diagnosis or treatment advice.
+          AIR-AWARE provides environmental routing recommendations based on live AQI estimates and user parameters. It is not a medical device and does not provide medical diagnosis or treatment advice.
         </p>
       </div>
     </div>
   );
 }
+

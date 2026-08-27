@@ -40,11 +40,11 @@ export default function MapboxView({
   const leafletMapRef = useRef(null);
   const tileLayerRef = useRef(null);
 
-  const [currentStyleKey, setCurrentStyleKey] = useState("google_streets");
+  const [currentStyleKey, setCurrentStyleKey] = useState("google_dark");
   const [showAqiLayer, setShowAqiLayer] = useState(true);
   const [activePopupInfo, setActivePopupInfo] = useState(null);
 
-  // Initialize Map with Google Maps Tile Engine
+  // Initialize Map with Dark Tile Engine
   useEffect(() => {
     if (!mapContainerRef.current) return;
     if (leafletMapRef.current) return;
@@ -57,7 +57,7 @@ export default function MapboxView({
 
     L.control.zoom({ position: "topright" }).addTo(map);
 
-    const styleCfg = MAP_STYLES.google_streets;
+    const styleCfg = MAP_STYLES.google_dark;
     const tileLayer = L.tileLayer(styleCfg.url, {
       attribution: styleCfg.attribution,
       maxZoom: 20,
@@ -84,7 +84,7 @@ export default function MapboxView({
     };
   }, []);
 
-  // Handle Map Style Switch (Google Streets vs Hybrid vs Dark)
+  // Handle Map Style Switch
   const handleSwitchStyle = (styleKey) => {
     setCurrentStyleKey(styleKey);
     const map = leafletMapRef.current;
@@ -115,9 +115,9 @@ export default function MapboxView({
     if (source && source[0] && source[1]) {
       const iconA = L.divIcon({
         className: "pin-a",
-        html: `<div style="background:#10B981;color:white;width:34px;height:34px;border-radius:50%;border:3px solid white;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:15px;box-shadow:0 4px 14px rgba(16,185,129,0.8);">A</div>`,
-        iconSize: [34, 34],
-        iconAnchor: [17, 17]
+        html: `<div style="background:#B7D96B;color:#071A17;width:30px;height:30px;border-radius:50%;border:2px solid #F1F5EE;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:13px;box-shadow:0 2px 8px rgba(0,0,0,0.5);">A</div>`,
+        iconSize: [30, 30],
+        iconAnchor: [15, 15]
       });
       window._googleLeafletMarkerA = L.marker([source[0], source[1]], { icon: iconA }).addTo(map);
     }
@@ -125,18 +125,17 @@ export default function MapboxView({
     if (destination && destination[0] && destination[1]) {
       const iconB = L.divIcon({
         className: "pin-b",
-        html: `<div style="background:#06B6D4;color:white;width:34px;height:34px;border-radius:50%;border:3px solid white;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:15px;box-shadow:0 4px 14px rgba(6,182,212,0.8);">B</div>`,
-        iconSize: [34, 34],
-        iconAnchor: [17, 17]
+        html: `<div style="background:#6FBF9A;color:#071A17;width:30px;height:30px;border-radius:50%;border:2px solid #F1F5EE;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:13px;box-shadow:0 2px 8px rgba(0,0,0,0.5);">B</div>`,
+        iconSize: [30, 30],
+        iconAnchor: [15, 15]
       });
       window._googleLeafletMarkerB = L.marker([destination[0], destination[1]], { icon: iconB }).addTo(map);
     }
 
-    // Fit map bounds to turn-by-turn road route
     if (source && destination && source[0] && destination[0]) {
       try {
         const bounds = L.latLngBounds([source, destination]);
-        map.fitBounds(bounds, { padding: [60, 60] });
+        map.fitBounds(bounds, { padding: [50, 50] });
       } catch (e) {}
     }
   }, [source, destination]);
@@ -155,14 +154,14 @@ export default function MapboxView({
     const group = L.layerGroup();
 
     sectors.forEach((s) => {
-      const color = s.aqi <= 50 ? "#22C55E" : (s.aqi <= 100 ? "#FACC15" : (s.aqi <= 150 ? "#F97316" : "#EF4444"));
+      const color = s.aqi <= 50 ? "#78C091" : (s.aqi <= 100 ? "#E3C85A" : (s.aqi <= 150 ? "#E99A5A" : "#D96B63"));
       const circle = L.circle([s.lat, s.lon], {
         color: color,
         fillColor: color,
-        fillOpacity: 0.28,
+        fillOpacity: 0.22,
         radius: 1300,
         stroke: true,
-        weight: 1.5
+        weight: 1.2
       });
 
       circle.on("click", () => {
@@ -176,7 +175,7 @@ export default function MapboxView({
     window._googleSectorGroup = group;
   }, [sectors, showAqiLayer]);
 
-  // Render Turn-by-Turn Road Network Vectors (Following Actual Streets)
+  // Render Turn-by-Turn Road Network Vectors
   useEffect(() => {
     const map = leafletMapRef.current;
     if (!map) return;
@@ -195,11 +194,10 @@ export default function MapboxView({
       const isSelected = selectedRoute === r.type || selectedRoute === r.id;
       const isHovered = hoveredRoute === r.id || hoveredRoute === r.type;
 
-      let color = r.type === "healthiest" ? "#059669" : (r.type === "fastest" ? "#2563EB" : "#9333EA");
-      let weight = isSelected ? 8 : (isHovered ? 6 : 4);
-      let opacity = isSelected ? 0.95 : 0.6;
+      let color = r.type === "healthiest" ? "#B7D96B" : (r.type === "fastest" ? "#6FBF9A" : "#4E685E");
+      let weight = isSelected ? 6 : (isHovered ? 5 : 3);
+      let opacity = isSelected ? 0.95 : 0.55;
 
-      // Draw exact turn-by-turn road polyline
       const polyline = L.polyline(r.coordinates, {
         color: color,
         weight: weight,
@@ -227,6 +225,7 @@ export default function MapboxView({
     window._googleRouteGroup = group;
   }, [routes, selectedRoute, hoveredRoute]);
 
+
   return (
     <div className="relative w-full h-[550px] rounded-2xl overflow-hidden border border-gray-700 glass-panel shadow-2xl">
       {/* Map Canvas Container */}
@@ -240,7 +239,7 @@ export default function MapboxView({
             onClick={() => handleSwitchStyle("google_streets")}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
               currentStyleKey === "google_streets"
-                ? "bg-emerald-500 text-white shadow-md"
+                ? "bg-yellow-500 text-white shadow-md"
                 : "text-gray-300 hover:text-white"
             }`}
           >
@@ -250,7 +249,7 @@ export default function MapboxView({
             onClick={() => handleSwitchStyle("google_hybrid")}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
               currentStyleKey === "google_hybrid"
-                ? "bg-emerald-500 text-white shadow-md"
+                ? "bg-yellow-500 text-white shadow-md"
                 : "text-gray-300 hover:text-white"
             }`}
           >
@@ -260,7 +259,7 @@ export default function MapboxView({
             onClick={() => handleSwitchStyle("google_dark")}
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
               currentStyleKey === "google_dark"
-                ? "bg-emerald-500 text-white shadow-md"
+                ? "bg-yellow-500 text-white shadow-md"
                 : "text-gray-300 hover:text-white"
             }`}
           >
@@ -273,7 +272,7 @@ export default function MapboxView({
           onClick={() => setShowAqiLayer(!showAqiLayer)}
           className={`px-3.5 py-1.5 rounded-xl text-xs font-bold border transition-all flex items-center gap-2 shadow-lg backdrop-blur-md ${
             showAqiLayer
-              ? "bg-emerald-500/20 border-emerald-500/40 text-emerald-400"
+              ? "bg-yellow-500/20 border-yellow-500/40 text-yellow-400"
               : "bg-gray-900/80 border-white/10 text-gray-300"
           }`}
         >
@@ -291,12 +290,12 @@ export default function MapboxView({
 
       {/* Floating Sector Popup */}
       {activePopupInfo && (
-        <div className="absolute top-16 left-4 z-10 glass-panel p-4 rounded-xl border-emerald-500/40 shadow-xl max-w-xs text-xs space-y-1 bg-gray-950/90 text-white">
+        <div className="absolute top-16 left-4 z-10 glass-panel p-4 rounded-xl border-yellow-500/40 shadow-xl max-w-xs text-xs space-y-1 bg-gray-950/90 text-white">
           <div className="flex items-center justify-between font-bold text-white">
             <span>{activePopupInfo.name}</span>
             <button onClick={() => setActivePopupInfo(null)} className="text-gray-400 hover:text-white">✕</button>
           </div>
-          <p className="text-gray-300">AQI: <strong className="text-emerald-400">{activePopupInfo.aqi}</strong> ({activePopupInfo.status})</p>
+          <p className="text-gray-300">AQI: <strong className="text-yellow-400">{activePopupInfo.aqi}</strong> ({activePopupInfo.status})</p>
           <p className="text-gray-400">Population Density: {activePopupInfo.density?.toLocaleString()}/km²</p>
           <p className="text-[10px] text-gray-500 pt-1">Real-time Turn-by-Turn Road Network</p>
         </div>
@@ -306,12 +305,12 @@ export default function MapboxView({
       <div className="absolute bottom-4 right-4 z-10 glass-panel p-3.5 rounded-2xl border-white/10 shadow-2xl backdrop-blur-md text-xs space-y-2 max-w-[210px] bg-gray-950/90 text-white">
         <div className="flex items-center justify-between font-bold text-gray-300 text-[11px]">
           <span>AIR QUALITY INDEX</span>
-          <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+          <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
         </div>
         <div className="space-y-1.5 font-medium">
-          <div className="flex items-center justify-between text-emerald-400">
+          <div className="flex items-center justify-between text-yellow-400">
             <span className="flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" /> Good (0-50)
+              <span className="w-2.5 h-2.5 rounded-full bg-yellow-500" /> Good (0-50)
             </span>
           </div>
           <div className="flex items-center justify-between text-yellow-400">

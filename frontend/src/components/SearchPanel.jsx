@@ -30,7 +30,7 @@ export default function SearchPanel({
     <div className="clean-search-card">
       <div className="clean-card-header">
         <div className="clean-badge">
-          <Sparkles className="size-3.5 text-emerald-500" />
+          <Sparkles className="size-3.5 text-yellow-500" />
           <span>HEALTH-AWARE NAVIGATION</span>
         </div>
         <h1 className="clean-card-title">Take the healthier route</h1>
@@ -150,7 +150,7 @@ export default function SearchPanel({
               />
             </div>
             <div className="weight-item">
-              <span className="text-emerald-500 font-semibold">AQI Protection ({weights.aqi})</span>
+              <span className="text-yellow-500 font-semibold">AQI Protection ({weights.aqi})</span>
               <input
                 type="range"
                 min="0.05"

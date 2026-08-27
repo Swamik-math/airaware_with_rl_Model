@@ -64,7 +64,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--bg-primary)] text-[var(--text-main)] selection:bg-emerald-500 selection:text-white">
+    <div className="min-h-screen flex flex-col bg-[var(--bg-primary)] text-[var(--text-main)] selection:bg-yellow-500 selection:text-white">
       {/* Top Sticky Header */}
       <Header
         currentTab={currentTab}

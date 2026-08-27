@@ -154,3 +154,15 @@ def _generate_road_fallback(slat, slon, dlat, dlon, name, factor):
         "duration_min": max(3, round((base_dist * factor / 5.0) * 60)),
         "coordinates": pts
     }
+
+
+def _pick_route_indexes(routes):
+    if not routes:
+        return 0, 0, 0
+    shortest_idx = min(range(len(routes)), key=lambda i: routes[i].get("distance_km", float("inf")))
+    fastest_idx = min(range(len(routes)), key=lambda i: routes[i].get("duration_min", float("inf")))
+    used = {shortest_idx, fastest_idx}
+    remaining = [i for i in range(len(routes)) if i not in used]
+    healthiest_idx = remaining[0] if remaining else 0
+    return shortest_idx, fastest_idx, healthiest_idx
+
