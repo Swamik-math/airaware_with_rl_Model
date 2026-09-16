@@ -1,0 +1,3290 @@
+{
+  "table_1_sample": [
+    {
+      "route_id": 1,
+      "source": "Indiranagar",
+      "destination": "MG Road",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 9.6,
+          "travel_time_min": 15,
+          "average_aqi": 90,
+          "aqi_exposure": 863.1,
+          "computation_time_ms": 2093.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 9.7,
+          "travel_time_min": 13,
+          "average_aqi": 90,
+          "aqi_exposure": 875.7,
+          "computation_time_ms": 837.4
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 9.7,
+          "travel_time_min": 13,
+          "average_aqi": 90,
+          "aqi_exposure": 875.7,
+          "computation_time_ms": 2093.6
+        }
+      }
+    },
+    {
+      "route_id": 2,
+      "source": "Hebbal",
+      "destination": "Indiranagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 13.8,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1246.5,
+          "computation_time_ms": 2114.3
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 13.8,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1246.5,
+          "computation_time_ms": 845.7
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 13.8,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1246.5,
+          "computation_time_ms": 2114.3
+        }
+      }
+    },
+    {
+      "route_id": 3,
+      "source": "Marathahalli",
+      "destination": "MG Road",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 14.8,
+          "travel_time_min": 20,
+          "average_aqi": 90,
+          "aqi_exposure": 1329.3,
+          "computation_time_ms": 3616.3
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 14.8,
+          "travel_time_min": 20,
+          "average_aqi": 90,
+          "aqi_exposure": 1329.3,
+          "computation_time_ms": 1446.5
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 14.8,
+          "travel_time_min": 20,
+          "average_aqi": 90,
+          "aqi_exposure": 1329.3,
+          "computation_time_ms": 3616.3
+        }
+      }
+    },
+    {
+      "route_id": 4,
+      "source": "Jayanagar",
+      "destination": "Peenya Industrial",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 16.5,
+          "travel_time_min": 20,
+          "average_aqi": 91,
+          "aqi_exposure": 1500.6,
+          "computation_time_ms": 7464.1
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 16.5,
+          "travel_time_min": 20,
+          "average_aqi": 91,
+          "aqi_exposure": 1500.6,
+          "computation_time_ms": 2985.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 16.5,
+          "travel_time_min": 20,
+          "average_aqi": 91,
+          "aqi_exposure": 1500.6,
+          "computation_time_ms": 7464.1
+        }
+      }
+    },
+    {
+      "route_id": 5,
+      "source": "Electronic City",
+      "destination": "Peenya Industrial",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 37.1,
+          "travel_time_min": 48,
+          "average_aqi": 91,
+          "aqi_exposure": 3377.0,
+          "computation_time_ms": 1761.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 47.9,
+          "travel_time_min": 43,
+          "average_aqi": 92,
+          "aqi_exposure": 4408.6,
+          "computation_time_ms": 704.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 37.1,
+          "travel_time_min": 48,
+          "average_aqi": 91,
+          "aqi_exposure": 3377.0,
+          "computation_time_ms": 1761.6
+        }
+      }
+    }
+  ],
+  "table_2_summary": [
+    {
+      "algorithm": "Dijkstra",
+      "mean_distance": "16.4 +/- 7.0",
+      "mean_travel_time": "22.6 +/- 13.8",
+      "mean_average_aqi": "90.3 +/- 0.6",
+      "mean_aqi_exposure": "1478.2 +/- 627.4",
+      "mean_computation_time": "1884.2 +/- 926.4",
+      "lowest_aqi_wins": 99
+    },
+    {
+      "algorithm": "A*",
+      "mean_distance": "16.5 +/- 7.4",
+      "mean_travel_time": "21.2 +/- 8.3",
+      "mean_average_aqi": "90.3 +/- 0.6",
+      "mean_aqi_exposure": "1492.9 +/- 665.4",
+      "mean_computation_time": "753.9 +/- 370.6",
+      "lowest_aqi_wins": 0
+    },
+    {
+      "algorithm": "Q-Learning (RL)",
+      "mean_distance": "17.1 +/- 8.4",
+      "mean_travel_time": "22.2 +/- 10.4",
+      "mean_average_aqi": "90.2 +/- 0.7",
+      "mean_aqi_exposure": "1538.2 +/- 752.9",
+      "mean_computation_time": "1884.2 +/- 926.5",
+      "lowest_aqi_wins": 1
+    }
+  ],
+  "all_100_routes": [
+    {
+      "route_id": 1,
+      "source": "Indiranagar",
+      "destination": "MG Road",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 9.6,
+          "travel_time_min": 15,
+          "average_aqi": 90,
+          "aqi_exposure": 863.1,
+          "computation_time_ms": 2093.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 9.7,
+          "travel_time_min": 13,
+          "average_aqi": 90,
+          "aqi_exposure": 875.7,
+          "computation_time_ms": 837.4
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 9.7,
+          "travel_time_min": 13,
+          "average_aqi": 90,
+          "aqi_exposure": 875.7,
+          "computation_time_ms": 2093.6
+        }
+      }
+    },
+    {
+      "route_id": 2,
+      "source": "Hebbal",
+      "destination": "Indiranagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 13.8,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1246.5,
+          "computation_time_ms": 2114.3
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 13.8,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1246.5,
+          "computation_time_ms": 845.7
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 13.8,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1246.5,
+          "computation_time_ms": 2114.3
+        }
+      }
+    },
+    {
+      "route_id": 3,
+      "source": "Marathahalli",
+      "destination": "MG Road",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 14.8,
+          "travel_time_min": 20,
+          "average_aqi": 90,
+          "aqi_exposure": 1329.3,
+          "computation_time_ms": 3616.3
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 14.8,
+          "travel_time_min": 20,
+          "average_aqi": 90,
+          "aqi_exposure": 1329.3,
+          "computation_time_ms": 1446.5
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 14.8,
+          "travel_time_min": 20,
+          "average_aqi": 90,
+          "aqi_exposure": 1329.3,
+          "computation_time_ms": 3616.3
+        }
+      }
+    },
+    {
+      "route_id": 4,
+      "source": "Jayanagar",
+      "destination": "Peenya Industrial",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 16.5,
+          "travel_time_min": 20,
+          "average_aqi": 91,
+          "aqi_exposure": 1500.6,
+          "computation_time_ms": 7464.1
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 16.5,
+          "travel_time_min": 20,
+          "average_aqi": 91,
+          "aqi_exposure": 1500.6,
+          "computation_time_ms": 2985.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 16.5,
+          "travel_time_min": 20,
+          "average_aqi": 91,
+          "aqi_exposure": 1500.6,
+          "computation_time_ms": 7464.1
+        }
+      }
+    },
+    {
+      "route_id": 5,
+      "source": "Electronic City",
+      "destination": "Peenya Industrial",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 37.1,
+          "travel_time_min": 48,
+          "average_aqi": 91,
+          "aqi_exposure": 3377.0,
+          "computation_time_ms": 1761.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 47.9,
+          "travel_time_min": 43,
+          "average_aqi": 92,
+          "aqi_exposure": 4408.6,
+          "computation_time_ms": 704.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 37.1,
+          "travel_time_min": 48,
+          "average_aqi": 91,
+          "aqi_exposure": 3377.0,
+          "computation_time_ms": 1761.6
+        }
+      }
+    },
+    {
+      "route_id": 6,
+      "source": "Indiranagar",
+      "destination": "HSR Layout",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 11.7,
+          "travel_time_min": 15,
+          "average_aqi": 90,
+          "aqi_exposure": 1049.4,
+          "computation_time_ms": 1970.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 11.7,
+          "travel_time_min": 15,
+          "average_aqi": 90,
+          "aqi_exposure": 1049.4,
+          "computation_time_ms": 788.2
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 11.7,
+          "travel_time_min": 15,
+          "average_aqi": 90,
+          "aqi_exposure": 1049.4,
+          "computation_time_ms": 1970.6
+        }
+      }
+    },
+    {
+      "route_id": 7,
+      "source": "Hebbal",
+      "destination": "Indiranagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 14.9,
+          "travel_time_min": 20,
+          "average_aqi": 90,
+          "aqi_exposure": 1341.0,
+          "computation_time_ms": 1305.2
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 15.1,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1356.3,
+          "computation_time_ms": 522.1
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 15.1,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1356.3,
+          "computation_time_ms": 1305.2
+        }
+      }
+    },
+    {
+      "route_id": 8,
+      "source": "Marathahalli",
+      "destination": "Electronic City",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 21.6,
+          "travel_time_min": 29,
+          "average_aqi": 90,
+          "aqi_exposure": 1939.5,
+          "computation_time_ms": 1340.1
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 21.6,
+          "travel_time_min": 29,
+          "average_aqi": 90,
+          "aqi_exposure": 1939.5,
+          "computation_time_ms": 537.0
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 21.6,
+          "travel_time_min": 29,
+          "average_aqi": 90,
+          "aqi_exposure": 1939.5,
+          "computation_time_ms": 1340.1
+        }
+      }
+    },
+    {
+      "route_id": 9,
+      "source": "Peenya Industrial",
+      "destination": "Indiranagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 17.2,
+          "travel_time_min": 24,
+          "average_aqi": 90,
+          "aqi_exposure": 1544.4,
+          "computation_time_ms": 1370.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 17.2,
+          "travel_time_min": 24,
+          "average_aqi": 90,
+          "aqi_exposure": 1544.4,
+          "computation_time_ms": 548.2
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 17.2,
+          "travel_time_min": 24,
+          "average_aqi": 90,
+          "aqi_exposure": 1544.4,
+          "computation_time_ms": 1370.6
+        }
+      }
+    },
+    {
+      "route_id": 10,
+      "source": "Electronic City",
+      "destination": "Koramangala",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 14.8,
+          "travel_time_min": 18,
+          "average_aqi": 91,
+          "aqi_exposure": 1343.2,
+          "computation_time_ms": 1972.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 14.8,
+          "travel_time_min": 18,
+          "average_aqi": 91,
+          "aqi_exposure": 1343.2,
+          "computation_time_ms": 789.0
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 14.8,
+          "travel_time_min": 18,
+          "average_aqi": 91,
+          "aqi_exposure": 1343.2,
+          "computation_time_ms": 1972.6
+        }
+      }
+    },
+    {
+      "route_id": 11,
+      "source": "Indiranagar",
+      "destination": "Whitefield",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 15.1,
+          "travel_time_min": 18,
+          "average_aqi": 90,
+          "aqi_exposure": 1362.6,
+          "computation_time_ms": 1519.4
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 15.1,
+          "travel_time_min": 18,
+          "average_aqi": 90,
+          "aqi_exposure": 1362.6,
+          "computation_time_ms": 607.8
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 17.9,
+          "travel_time_min": 19,
+          "average_aqi": 89,
+          "aqi_exposure": 1594.0,
+          "computation_time_ms": 1519.4
+        }
+      }
+    },
+    {
+      "route_id": 12,
+      "source": "Hebbal",
+      "destination": "Whitefield",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 24.3,
+          "travel_time_min": 31,
+          "average_aqi": 89,
+          "aqi_exposure": 2161.8,
+          "computation_time_ms": 1332.2
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 24.3,
+          "travel_time_min": 31,
+          "average_aqi": 89,
+          "aqi_exposure": 2161.8,
+          "computation_time_ms": 533.4
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 24.3,
+          "travel_time_min": 31,
+          "average_aqi": 89,
+          "aqi_exposure": 2161.8,
+          "computation_time_ms": 1332.2
+        }
+      }
+    },
+    {
+      "route_id": 13,
+      "source": "MG Road",
+      "destination": "HSR Layout",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 10.9,
+          "travel_time_min": 131,
+          "average_aqi": 91,
+          "aqi_exposure": 991.0,
+          "computation_time_ms": 4859.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 11.7,
+          "travel_time_min": 15,
+          "average_aqi": 91,
+          "aqi_exposure": 1066.5,
+          "computation_time_ms": 1944.8
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 11.7,
+          "travel_time_min": 15,
+          "average_aqi": 91,
+          "aqi_exposure": 1066.5,
+          "computation_time_ms": 4859.6
+        }
+      }
+    },
+    {
+      "route_id": 14,
+      "source": "Electronic City",
+      "destination": "Whitefield",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 21.8,
+          "travel_time_min": 28,
+          "average_aqi": 90,
+          "aqi_exposure": 1957.5,
+          "computation_time_ms": 7269.5
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 21.8,
+          "travel_time_min": 28,
+          "average_aqi": 90,
+          "aqi_exposure": 1957.5,
+          "computation_time_ms": 2908.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 21.8,
+          "travel_time_min": 28,
+          "average_aqi": 90,
+          "aqi_exposure": 1957.5,
+          "computation_time_ms": 7269.5
+        }
+      }
+    },
+    {
+      "route_id": 15,
+      "source": "Peenya Industrial",
+      "destination": "Koramangala",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 20.5,
+          "travel_time_min": 27,
+          "average_aqi": 91,
+          "aqi_exposure": 1861.9,
+          "computation_time_ms": 1493.1
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 20.5,
+          "travel_time_min": 27,
+          "average_aqi": 91,
+          "aqi_exposure": 1861.9,
+          "computation_time_ms": 597.2
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 20.5,
+          "travel_time_min": 27,
+          "average_aqi": 91,
+          "aqi_exposure": 1861.9,
+          "computation_time_ms": 1493.1
+        }
+      }
+    },
+    {
+      "route_id": 16,
+      "source": "Marathahalli",
+      "destination": "HSR Layout",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 12.4,
+          "travel_time_min": 18,
+          "average_aqi": 90,
+          "aqi_exposure": 1116.9,
+          "computation_time_ms": 1995.2
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 12.4,
+          "travel_time_min": 18,
+          "average_aqi": 90,
+          "aqi_exposure": 1116.9,
+          "computation_time_ms": 798.1
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 12.4,
+          "travel_time_min": 18,
+          "average_aqi": 90,
+          "aqi_exposure": 1116.9,
+          "computation_time_ms": 1995.2
+        }
+      }
+    },
+    {
+      "route_id": 17,
+      "source": "MG Road",
+      "destination": "Koramangala",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 6.8,
+          "travel_time_min": 10,
+          "average_aqi": 91,
+          "aqi_exposure": 622.4,
+          "computation_time_ms": 1983.0
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 6.8,
+          "travel_time_min": 10,
+          "average_aqi": 91,
+          "aqi_exposure": 622.4,
+          "computation_time_ms": 793.2
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 6.8,
+          "travel_time_min": 10,
+          "average_aqi": 91,
+          "aqi_exposure": 622.4,
+          "computation_time_ms": 1983.0
+        }
+      }
+    },
+    {
+      "route_id": 18,
+      "source": "HSR Layout",
+      "destination": "Jayanagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 6.0,
+          "travel_time_min": 10,
+          "average_aqi": 91,
+          "aqi_exposure": 547.8,
+          "computation_time_ms": 2010.0
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 6.0,
+          "travel_time_min": 10,
+          "average_aqi": 91,
+          "aqi_exposure": 547.8,
+          "computation_time_ms": 804.0
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 6.0,
+          "travel_time_min": 10,
+          "average_aqi": 91,
+          "aqi_exposure": 547.8,
+          "computation_time_ms": 2011.4
+        }
+      }
+    },
+    {
+      "route_id": 19,
+      "source": "MG Road",
+      "destination": "Koramangala",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 10.2,
+          "travel_time_min": 15,
+          "average_aqi": 91,
+          "aqi_exposure": 928.2,
+          "computation_time_ms": 1319.8
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 10.2,
+          "travel_time_min": 15,
+          "average_aqi": 91,
+          "aqi_exposure": 928.2,
+          "computation_time_ms": 528.9
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 10.3,
+          "travel_time_min": 16,
+          "average_aqi": 90,
+          "aqi_exposure": 927.0,
+          "computation_time_ms": 1319.8
+        }
+      }
+    },
+    {
+      "route_id": 20,
+      "source": "Indiranagar",
+      "destination": "Electronic City",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 20.8,
+          "travel_time_min": 27,
+          "average_aqi": 91,
+          "aqi_exposure": 1889.2,
+          "computation_time_ms": 2016.5
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 20.8,
+          "travel_time_min": 27,
+          "average_aqi": 91,
+          "aqi_exposure": 1889.2,
+          "computation_time_ms": 806.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 20.8,
+          "travel_time_min": 27,
+          "average_aqi": 91,
+          "aqi_exposure": 1889.2,
+          "computation_time_ms": 2016.5
+        }
+      }
+    },
+    {
+      "route_id": 21,
+      "source": "Peenya Industrial",
+      "destination": "Marathahalli",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 27.2,
+          "travel_time_min": 34,
+          "average_aqi": 90,
+          "aqi_exposure": 2452.5,
+          "computation_time_ms": 2057.5
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 27.2,
+          "travel_time_min": 34,
+          "average_aqi": 90,
+          "aqi_exposure": 2452.5,
+          "computation_time_ms": 823.0
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 27.2,
+          "travel_time_min": 34,
+          "average_aqi": 90,
+          "aqi_exposure": 2452.5,
+          "computation_time_ms": 2057.5
+        }
+      }
+    },
+    {
+      "route_id": 22,
+      "source": "Hebbal",
+      "destination": "Whitefield",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 23.1,
+          "travel_time_min": 28,
+          "average_aqi": 89,
+          "aqi_exposure": 2056.8,
+          "computation_time_ms": 1759.0
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 23.1,
+          "travel_time_min": 28,
+          "average_aqi": 89,
+          "aqi_exposure": 2056.8,
+          "computation_time_ms": 703.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 23.1,
+          "travel_time_min": 28,
+          "average_aqi": 89,
+          "aqi_exposure": 2056.8,
+          "computation_time_ms": 1759.0
+        }
+      }
+    },
+    {
+      "route_id": 23,
+      "source": "Hebbal",
+      "destination": "MG Road",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 10.9,
+          "travel_time_min": 14,
+          "average_aqi": 90,
+          "aqi_exposure": 977.4,
+          "computation_time_ms": 1997.4
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 10.9,
+          "travel_time_min": 14,
+          "average_aqi": 90,
+          "aqi_exposure": 977.4,
+          "computation_time_ms": 799.0
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 10.9,
+          "travel_time_min": 14,
+          "average_aqi": 90,
+          "aqi_exposure": 977.4,
+          "computation_time_ms": 1997.4
+        }
+      }
+    },
+    {
+      "route_id": 24,
+      "source": "Peenya Industrial",
+      "destination": "Whitefield",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 29.6,
+          "travel_time_min": 36,
+          "average_aqi": 90,
+          "aqi_exposure": 2659.5,
+          "computation_time_ms": 1626.4
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 29.6,
+          "travel_time_min": 36,
+          "average_aqi": 90,
+          "aqi_exposure": 2659.5,
+          "computation_time_ms": 650.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 29.6,
+          "travel_time_min": 36,
+          "average_aqi": 90,
+          "aqi_exposure": 2659.5,
+          "computation_time_ms": 1626.4
+        }
+      }
+    },
+    {
+      "route_id": 25,
+      "source": "Jayanagar",
+      "destination": "Indiranagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 10.0,
+          "travel_time_min": 15,
+          "average_aqi": 91,
+          "aqi_exposure": 912.7,
+          "computation_time_ms": 2004.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 10.0,
+          "travel_time_min": 15,
+          "average_aqi": 91,
+          "aqi_exposure": 912.7,
+          "computation_time_ms": 801.8
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 10.0,
+          "travel_time_min": 15,
+          "average_aqi": 91,
+          "aqi_exposure": 912.7,
+          "computation_time_ms": 2004.6
+        }
+      }
+    },
+    {
+      "route_id": 26,
+      "source": "Hebbal",
+      "destination": "Koramangala",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 15.2,
+          "travel_time_min": 21,
+          "average_aqi": 90,
+          "aqi_exposure": 1368.0,
+          "computation_time_ms": 1333.9
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 15.3,
+          "travel_time_min": 20,
+          "average_aqi": 90,
+          "aqi_exposure": 1378.8,
+          "computation_time_ms": 533.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 15.3,
+          "travel_time_min": 20,
+          "average_aqi": 90,
+          "aqi_exposure": 1378.8,
+          "computation_time_ms": 1333.9
+        }
+      }
+    },
+    {
+      "route_id": 27,
+      "source": "Hebbal",
+      "destination": "Whitefield",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 21.8,
+          "travel_time_min": 28,
+          "average_aqi": 89,
+          "aqi_exposure": 1940.2,
+          "computation_time_ms": 1537.1
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 21.8,
+          "travel_time_min": 28,
+          "average_aqi": 89,
+          "aqi_exposure": 1940.2,
+          "computation_time_ms": 614.8
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 21.8,
+          "travel_time_min": 28,
+          "average_aqi": 89,
+          "aqi_exposure": 1940.2,
+          "computation_time_ms": 1537.1
+        }
+      }
+    },
+    {
+      "route_id": 28,
+      "source": "Hebbal",
+      "destination": "Jayanagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 14.4,
+          "travel_time_min": 17,
+          "average_aqi": 91,
+          "aqi_exposure": 1314.0,
+          "computation_time_ms": 2013.4
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 14.4,
+          "travel_time_min": 17,
+          "average_aqi": 91,
+          "aqi_exposure": 1314.0,
+          "computation_time_ms": 806.4
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 14.4,
+          "travel_time_min": 17,
+          "average_aqi": 91,
+          "aqi_exposure": 1314.0,
+          "computation_time_ms": 2013.4
+        }
+      }
+    },
+    {
+      "route_id": 29,
+      "source": "Whitefield",
+      "destination": "Peenya Industrial",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 36.4,
+          "travel_time_min": 44,
+          "average_aqi": 90,
+          "aqi_exposure": 3273.3,
+          "computation_time_ms": 2488.7
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 36.4,
+          "travel_time_min": 44,
+          "average_aqi": 90,
+          "aqi_exposure": 3273.3,
+          "computation_time_ms": 995.5
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 52.9,
+          "travel_time_min": 65,
+          "average_aqi": 89,
+          "aqi_exposure": 4703.7,
+          "computation_time_ms": 2489.8
+        }
+      }
+    },
+    {
+      "route_id": 30,
+      "source": "MG Road",
+      "destination": "HSR Layout",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 9.1,
+          "travel_time_min": 12,
+          "average_aqi": 91,
+          "aqi_exposure": 824.5,
+          "computation_time_ms": 1573.9
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 9.1,
+          "travel_time_min": 12,
+          "average_aqi": 91,
+          "aqi_exposure": 824.5,
+          "computation_time_ms": 629.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 9.1,
+          "travel_time_min": 12,
+          "average_aqi": 91,
+          "aqi_exposure": 824.5,
+          "computation_time_ms": 1573.9
+        }
+      }
+    },
+    {
+      "route_id": 31,
+      "source": "Koramangala",
+      "destination": "Hebbal",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 16.4,
+          "travel_time_min": 19,
+          "average_aqi": 91,
+          "aqi_exposure": 1493.3,
+          "computation_time_ms": 2016.0
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 16.4,
+          "travel_time_min": 19,
+          "average_aqi": 91,
+          "aqi_exposure": 1493.3,
+          "computation_time_ms": 806.4
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 16.4,
+          "travel_time_min": 19,
+          "average_aqi": 91,
+          "aqi_exposure": 1493.3,
+          "computation_time_ms": 2016.0
+        }
+      }
+    },
+    {
+      "route_id": 32,
+      "source": "HSR Layout",
+      "destination": "Electronic City",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 10.1,
+          "travel_time_min": 14,
+          "average_aqi": 91,
+          "aqi_exposure": 919.1,
+          "computation_time_ms": 1333.4
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 10.1,
+          "travel_time_min": 14,
+          "average_aqi": 91,
+          "aqi_exposure": 919.1,
+          "computation_time_ms": 534.4
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 10.1,
+          "travel_time_min": 14,
+          "average_aqi": 91,
+          "aqi_exposure": 919.1,
+          "computation_time_ms": 1333.4
+        }
+      }
+    },
+    {
+      "route_id": 33,
+      "source": "Indiranagar",
+      "destination": "MG Road",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 6.8,
+          "travel_time_min": 10,
+          "average_aqi": 90,
+          "aqi_exposure": 612.0,
+          "computation_time_ms": 1295.0
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 6.8,
+          "travel_time_min": 10,
+          "average_aqi": 90,
+          "aqi_exposure": 612.0,
+          "computation_time_ms": 518.0
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 6.8,
+          "travel_time_min": 10,
+          "average_aqi": 90,
+          "aqi_exposure": 612.0,
+          "computation_time_ms": 1295.0
+        }
+      }
+    },
+    {
+      "route_id": 34,
+      "source": "Whitefield",
+      "destination": "Marathahalli",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 8.2,
+          "travel_time_min": 8,
+          "average_aqi": 89,
+          "aqi_exposure": 725.4,
+          "computation_time_ms": 1965.0
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 8.2,
+          "travel_time_min": 8,
+          "average_aqi": 89,
+          "aqi_exposure": 725.4,
+          "computation_time_ms": 786.0
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 8.2,
+          "travel_time_min": 8,
+          "average_aqi": 89,
+          "aqi_exposure": 725.4,
+          "computation_time_ms": 1965.0
+        }
+      }
+    },
+    {
+      "route_id": 35,
+      "source": "Indiranagar",
+      "destination": "Hebbal",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 10.2,
+          "travel_time_min": 12,
+          "average_aqi": 90,
+          "aqi_exposure": 921.6,
+          "computation_time_ms": 1964.1
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 10.2,
+          "travel_time_min": 12,
+          "average_aqi": 90,
+          "aqi_exposure": 921.6,
+          "computation_time_ms": 787.2
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 10.2,
+          "travel_time_min": 12,
+          "average_aqi": 90,
+          "aqi_exposure": 921.6,
+          "computation_time_ms": 1964.1
+        }
+      }
+    },
+    {
+      "route_id": 36,
+      "source": "Hebbal",
+      "destination": "MG Road",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 10.9,
+          "travel_time_min": 14,
+          "average_aqi": 90,
+          "aqi_exposure": 984.6,
+          "computation_time_ms": 1351.4
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 10.9,
+          "travel_time_min": 14,
+          "average_aqi": 90,
+          "aqi_exposure": 984.6,
+          "computation_time_ms": 540.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 10.9,
+          "travel_time_min": 14,
+          "average_aqi": 90,
+          "aqi_exposure": 984.6,
+          "computation_time_ms": 1351.4
+        }
+      }
+    },
+    {
+      "route_id": 37,
+      "source": "Jayanagar",
+      "destination": "Hebbal",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 15.2,
+          "travel_time_min": 19,
+          "average_aqi": 91,
+          "aqi_exposure": 1382.3,
+          "computation_time_ms": 1296.4
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 15.2,
+          "travel_time_min": 19,
+          "average_aqi": 91,
+          "aqi_exposure": 1382.3,
+          "computation_time_ms": 518.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 15.2,
+          "travel_time_min": 19,
+          "average_aqi": 91,
+          "aqi_exposure": 1382.3,
+          "computation_time_ms": 1296.4
+        }
+      }
+    },
+    {
+      "route_id": 38,
+      "source": "HSR Layout",
+      "destination": "Peenya Industrial",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 25.9,
+          "travel_time_min": 35,
+          "average_aqi": 91,
+          "aqi_exposure": 2357.8,
+          "computation_time_ms": 1496.1
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 26.2,
+          "travel_time_min": 34,
+          "average_aqi": 91,
+          "aqi_exposure": 2382.4,
+          "computation_time_ms": 599.5
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 26.2,
+          "travel_time_min": 34,
+          "average_aqi": 91,
+          "aqi_exposure": 2382.4,
+          "computation_time_ms": 1496.1
+        }
+      }
+    },
+    {
+      "route_id": 39,
+      "source": "Hebbal",
+      "destination": "Jayanagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 13.1,
+          "travel_time_min": 18,
+          "average_aqi": 91,
+          "aqi_exposure": 1191.2,
+          "computation_time_ms": 1314.2
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 13.1,
+          "travel_time_min": 18,
+          "average_aqi": 91,
+          "aqi_exposure": 1191.2,
+          "computation_time_ms": 525.7
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 13.1,
+          "travel_time_min": 18,
+          "average_aqi": 91,
+          "aqi_exposure": 1191.2,
+          "computation_time_ms": 1314.2
+        }
+      }
+    },
+    {
+      "route_id": 40,
+      "source": "Hebbal",
+      "destination": "MG Road",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 12.1,
+          "travel_time_min": 16,
+          "average_aqi": 90,
+          "aqi_exposure": 1084.5,
+          "computation_time_ms": 1985.7
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 12.1,
+          "travel_time_min": 16,
+          "average_aqi": 90,
+          "aqi_exposure": 1084.5,
+          "computation_time_ms": 794.3
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 12.1,
+          "travel_time_min": 16,
+          "average_aqi": 90,
+          "aqi_exposure": 1084.5,
+          "computation_time_ms": 1985.7
+        }
+      }
+    },
+    {
+      "route_id": 41,
+      "source": "Hebbal",
+      "destination": "Koramangala",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 12.2,
+          "travel_time_min": 17,
+          "average_aqi": 90,
+          "aqi_exposure": 1098.9,
+          "computation_time_ms": 1345.0
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 12.2,
+          "travel_time_min": 17,
+          "average_aqi": 90,
+          "aqi_exposure": 1098.9,
+          "computation_time_ms": 538.0
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 12.2,
+          "travel_time_min": 17,
+          "average_aqi": 90,
+          "aqi_exposure": 1098.9,
+          "computation_time_ms": 1345.0
+        }
+      }
+    },
+    {
+      "route_id": 42,
+      "source": "Indiranagar",
+      "destination": "Peenya Industrial",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 19.1,
+          "travel_time_min": 23,
+          "average_aqi": 90,
+          "aqi_exposure": 1717.2,
+          "computation_time_ms": 2005.7
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 19.1,
+          "travel_time_min": 23,
+          "average_aqi": 90,
+          "aqi_exposure": 1717.2,
+          "computation_time_ms": 802.3
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 19.1,
+          "travel_time_min": 23,
+          "average_aqi": 90,
+          "aqi_exposure": 1717.2,
+          "computation_time_ms": 2005.7
+        }
+      }
+    },
+    {
+      "route_id": 43,
+      "source": "MG Road",
+      "destination": "Koramangala",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 9.2,
+          "travel_time_min": 17,
+          "average_aqi": 91,
+          "aqi_exposure": 834.5,
+          "computation_time_ms": 1266.3
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 10.7,
+          "travel_time_min": 16,
+          "average_aqi": 90,
+          "aqi_exposure": 961.2,
+          "computation_time_ms": 506.5
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 10.7,
+          "travel_time_min": 16,
+          "average_aqi": 90,
+          "aqi_exposure": 961.2,
+          "computation_time_ms": 1266.3
+        }
+      }
+    },
+    {
+      "route_id": 44,
+      "source": "Whitefield",
+      "destination": "HSR Layout",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 15.7,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1413.0,
+          "computation_time_ms": 2247.4
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 15.7,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1413.0,
+          "computation_time_ms": 899.0
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 15.7,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1413.0,
+          "computation_time_ms": 2247.4
+        }
+      }
+    },
+    {
+      "route_id": 45,
+      "source": "Electronic City",
+      "destination": "Indiranagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 22.1,
+          "travel_time_min": 28,
+          "average_aqi": 91,
+          "aqi_exposure": 2015.6,
+          "computation_time_ms": 1999.5
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 22.1,
+          "travel_time_min": 28,
+          "average_aqi": 91,
+          "aqi_exposure": 2015.6,
+          "computation_time_ms": 799.8
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 22.1,
+          "travel_time_min": 28,
+          "average_aqi": 91,
+          "aqi_exposure": 2015.6,
+          "computation_time_ms": 1999.5
+        }
+      }
+    },
+    {
+      "route_id": 46,
+      "source": "Hebbal",
+      "destination": "Whitefield",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 23.8,
+          "travel_time_min": 32,
+          "average_aqi": 89,
+          "aqi_exposure": 2120.9,
+          "computation_time_ms": 1604.5
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 23.8,
+          "travel_time_min": 32,
+          "average_aqi": 89,
+          "aqi_exposure": 2120.9,
+          "computation_time_ms": 642.8
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 23.8,
+          "travel_time_min": 32,
+          "average_aqi": 89,
+          "aqi_exposure": 2120.9,
+          "computation_time_ms": 1604.5
+        }
+      }
+    },
+    {
+      "route_id": 47,
+      "source": "Whitefield",
+      "destination": "HSR Layout",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 15.4,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1387.8,
+          "computation_time_ms": 1949.2
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 15.4,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1387.8,
+          "computation_time_ms": 780.2
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 15.4,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1387.8,
+          "computation_time_ms": 1949.2
+        }
+      }
+    },
+    {
+      "route_id": 48,
+      "source": "Hebbal",
+      "destination": "MG Road",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 8.0,
+          "travel_time_min": 11,
+          "average_aqi": 90,
+          "aqi_exposure": 721.8,
+          "computation_time_ms": 1963.1
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 8.0,
+          "travel_time_min": 11,
+          "average_aqi": 90,
+          "aqi_exposure": 721.8,
+          "computation_time_ms": 785.2
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 8.0,
+          "travel_time_min": 11,
+          "average_aqi": 90,
+          "aqi_exposure": 721.8,
+          "computation_time_ms": 1963.1
+        }
+      }
+    },
+    {
+      "route_id": 49,
+      "source": "Koramangala",
+      "destination": "Electronic City",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 14.1,
+          "travel_time_min": 18,
+          "average_aqi": 91,
+          "aqi_exposure": 1283.1,
+          "computation_time_ms": 2007.4
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 14.1,
+          "travel_time_min": 18,
+          "average_aqi": 91,
+          "aqi_exposure": 1283.1,
+          "computation_time_ms": 803.0
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 14.1,
+          "travel_time_min": 18,
+          "average_aqi": 91,
+          "aqi_exposure": 1283.1,
+          "computation_time_ms": 2007.4
+        }
+      }
+    },
+    {
+      "route_id": 50,
+      "source": "Marathahalli",
+      "destination": "Whitefield",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 12.4,
+          "travel_time_min": 17,
+          "average_aqi": 90,
+          "aqi_exposure": 1115.1,
+          "computation_time_ms": 1292.0
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 12.4,
+          "travel_time_min": 17,
+          "average_aqi": 90,
+          "aqi_exposure": 1115.1,
+          "computation_time_ms": 517.8
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 13.7,
+          "travel_time_min": 19,
+          "average_aqi": 89,
+          "aqi_exposure": 1218.4,
+          "computation_time_ms": 1292.0
+        }
+      }
+    },
+    {
+      "route_id": 51,
+      "source": "Jayanagar",
+      "destination": "Peenya Industrial",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 18.8,
+          "travel_time_min": 25,
+          "average_aqi": 91,
+          "aqi_exposure": 1712.6,
+          "computation_time_ms": 1555.1
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 18.8,
+          "travel_time_min": 25,
+          "average_aqi": 91,
+          "aqi_exposure": 1712.6,
+          "computation_time_ms": 623.0
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 18.8,
+          "travel_time_min": 25,
+          "average_aqi": 91,
+          "aqi_exposure": 1712.6,
+          "computation_time_ms": 1555.1
+        }
+      }
+    },
+    {
+      "route_id": 52,
+      "source": "Peenya Industrial",
+      "destination": "MG Road",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 10.1,
+          "travel_time_min": 13,
+          "average_aqi": 91,
+          "aqi_exposure": 921.8,
+          "computation_time_ms": 1985.3
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 10.1,
+          "travel_time_min": 13,
+          "average_aqi": 91,
+          "aqi_exposure": 921.8,
+          "computation_time_ms": 794.1
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 10.1,
+          "travel_time_min": 13,
+          "average_aqi": 91,
+          "aqi_exposure": 921.8,
+          "computation_time_ms": 1985.3
+        }
+      }
+    },
+    {
+      "route_id": 53,
+      "source": "Jayanagar",
+      "destination": "Marathahalli",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 17.6,
+          "travel_time_min": 24,
+          "average_aqi": 91,
+          "aqi_exposure": 1602.5,
+          "computation_time_ms": 1351.8
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 17.6,
+          "travel_time_min": 24,
+          "average_aqi": 91,
+          "aqi_exposure": 1602.5,
+          "computation_time_ms": 540.7
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 17.6,
+          "travel_time_min": 24,
+          "average_aqi": 91,
+          "aqi_exposure": 1602.5,
+          "computation_time_ms": 1351.8
+        }
+      }
+    },
+    {
+      "route_id": 54,
+      "source": "Koramangala",
+      "destination": "Marathahalli",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 12.0,
+          "travel_time_min": 16,
+          "average_aqi": 90,
+          "aqi_exposure": 1078.2,
+          "computation_time_ms": 1332.4
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 12.0,
+          "travel_time_min": 16,
+          "average_aqi": 90,
+          "aqi_exposure": 1078.2,
+          "computation_time_ms": 533.0
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 12.0,
+          "travel_time_min": 16,
+          "average_aqi": 90,
+          "aqi_exposure": 1078.2,
+          "computation_time_ms": 1332.4
+        }
+      }
+    },
+    {
+      "route_id": 55,
+      "source": "MG Road",
+      "destination": "Electronic City",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 16.3,
+          "travel_time_min": 24,
+          "average_aqi": 91,
+          "aqi_exposure": 1483.3,
+          "computation_time_ms": 2016.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 16.3,
+          "travel_time_min": 24,
+          "average_aqi": 91,
+          "aqi_exposure": 1483.3,
+          "computation_time_ms": 806.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 16.3,
+          "travel_time_min": 24,
+          "average_aqi": 91,
+          "aqi_exposure": 1483.3,
+          "computation_time_ms": 2016.6
+        }
+      }
+    },
+    {
+      "route_id": 56,
+      "source": "Electronic City",
+      "destination": "Whitefield",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 19.1,
+          "travel_time_min": 26,
+          "average_aqi": 90,
+          "aqi_exposure": 1716.3,
+          "computation_time_ms": 1556.7
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 19.1,
+          "travel_time_min": 26,
+          "average_aqi": 90,
+          "aqi_exposure": 1716.3,
+          "computation_time_ms": 622.7
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 19.1,
+          "travel_time_min": 26,
+          "average_aqi": 90,
+          "aqi_exposure": 1716.3,
+          "computation_time_ms": 1556.7
+        }
+      }
+    },
+    {
+      "route_id": 57,
+      "source": "HSR Layout",
+      "destination": "Koramangala",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 0.4,
+          "travel_time_min": 2,
+          "average_aqi": 91,
+          "aqi_exposure": 38.2,
+          "computation_time_ms": 2032.4
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 0.4,
+          "travel_time_min": 2,
+          "average_aqi": 91,
+          "aqi_exposure": 38.2,
+          "computation_time_ms": 813.5
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 0.4,
+          "travel_time_min": 2,
+          "average_aqi": 91,
+          "aqi_exposure": 38.2,
+          "computation_time_ms": 2032.4
+        }
+      }
+    },
+    {
+      "route_id": 58,
+      "source": "Koramangala",
+      "destination": "Jayanagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 4.5,
+          "travel_time_min": 7,
+          "average_aqi": 91,
+          "aqi_exposure": 411.3,
+          "computation_time_ms": 1999.2
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 4.5,
+          "travel_time_min": 7,
+          "average_aqi": 91,
+          "aqi_exposure": 411.3,
+          "computation_time_ms": 800.2
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 4.5,
+          "travel_time_min": 7,
+          "average_aqi": 91,
+          "aqi_exposure": 411.3,
+          "computation_time_ms": 1999.2
+        }
+      }
+    },
+    {
+      "route_id": 59,
+      "source": "Whitefield",
+      "destination": "Electronic City",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 25.8,
+          "travel_time_min": 34,
+          "average_aqi": 90,
+          "aqi_exposure": 2323.8,
+          "computation_time_ms": 1483.2
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 26.1,
+          "travel_time_min": 33,
+          "average_aqi": 90,
+          "aqi_exposure": 2347.2,
+          "computation_time_ms": 593.3
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 26.1,
+          "travel_time_min": 33,
+          "average_aqi": 90,
+          "aqi_exposure": 2347.2,
+          "computation_time_ms": 1483.2
+        }
+      }
+    },
+    {
+      "route_id": 60,
+      "source": "Jayanagar",
+      "destination": "Whitefield",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 20.3,
+          "travel_time_min": 25,
+          "average_aqi": 90,
+          "aqi_exposure": 1829.7,
+          "computation_time_ms": 2241.3
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 20.3,
+          "travel_time_min": 25,
+          "average_aqi": 90,
+          "aqi_exposure": 1829.7,
+          "computation_time_ms": 896.5
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 20.3,
+          "travel_time_min": 25,
+          "average_aqi": 90,
+          "aqi_exposure": 1829.7,
+          "computation_time_ms": 2241.8
+        }
+      }
+    },
+    {
+      "route_id": 61,
+      "source": "Whitefield",
+      "destination": "Peenya Industrial",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 28.8,
+          "travel_time_min": 33,
+          "average_aqi": 90,
+          "aqi_exposure": 2587.5,
+          "computation_time_ms": 2196.9
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 28.8,
+          "travel_time_min": 33,
+          "average_aqi": 90,
+          "aqi_exposure": 2587.5,
+          "computation_time_ms": 879.3
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 42.6,
+          "travel_time_min": 56,
+          "average_aqi": 89,
+          "aqi_exposure": 3795.0,
+          "computation_time_ms": 2196.9
+        }
+      }
+    },
+    {
+      "route_id": 62,
+      "source": "Peenya Industrial",
+      "destination": "HSR Layout",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 23.6,
+          "travel_time_min": 34,
+          "average_aqi": 91,
+          "aqi_exposure": 2147.6,
+          "computation_time_ms": 1336.3
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 23.6,
+          "travel_time_min": 34,
+          "average_aqi": 91,
+          "aqi_exposure": 2147.6,
+          "computation_time_ms": 535.5
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 23.6,
+          "travel_time_min": 34,
+          "average_aqi": 91,
+          "aqi_exposure": 2147.6,
+          "computation_time_ms": 1336.3
+        }
+      }
+    },
+    {
+      "route_id": 63,
+      "source": "MG Road",
+      "destination": "Koramangala",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 10.9,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 983.7,
+          "computation_time_ms": 1402.3
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 11.1,
+          "travel_time_min": 18,
+          "average_aqi": 91,
+          "aqi_exposure": 1008.3,
+          "computation_time_ms": 560.9
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 10.9,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 983.7,
+          "computation_time_ms": 1402.3
+        }
+      }
+    },
+    {
+      "route_id": 64,
+      "source": "MG Road",
+      "destination": "Koramangala",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 8.0,
+          "travel_time_min": 12,
+          "average_aqi": 91,
+          "aqi_exposure": 726.2,
+          "computation_time_ms": 1343.9
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 8.0,
+          "travel_time_min": 12,
+          "average_aqi": 91,
+          "aqi_exposure": 726.2,
+          "computation_time_ms": 538.1
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 8.0,
+          "travel_time_min": 12,
+          "average_aqi": 91,
+          "aqi_exposure": 726.2,
+          "computation_time_ms": 1343.9
+        }
+      }
+    },
+    {
+      "route_id": 65,
+      "source": "Hebbal",
+      "destination": "Indiranagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 12.1,
+          "travel_time_min": 15,
+          "average_aqi": 90,
+          "aqi_exposure": 1092.6,
+          "computation_time_ms": 2001.4
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 12.1,
+          "travel_time_min": 15,
+          "average_aqi": 90,
+          "aqi_exposure": 1092.6,
+          "computation_time_ms": 800.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 12.1,
+          "travel_time_min": 15,
+          "average_aqi": 90,
+          "aqi_exposure": 1092.6,
+          "computation_time_ms": 2001.4
+        }
+      }
+    },
+    {
+      "route_id": 66,
+      "source": "MG Road",
+      "destination": "Marathahalli",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 18.2,
+          "travel_time_min": 24,
+          "average_aqi": 90,
+          "aqi_exposure": 1642.5,
+          "computation_time_ms": 1294.7
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 18.4,
+          "travel_time_min": 23,
+          "average_aqi": 90,
+          "aqi_exposure": 1652.4,
+          "computation_time_ms": 518.9
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 18.4,
+          "travel_time_min": 23,
+          "average_aqi": 90,
+          "aqi_exposure": 1652.4,
+          "computation_time_ms": 1294.7
+        }
+      }
+    },
+    {
+      "route_id": 67,
+      "source": "Whitefield",
+      "destination": "HSR Layout",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 17.2,
+          "travel_time_min": 22,
+          "average_aqi": 90,
+          "aqi_exposure": 1552.5,
+          "computation_time_ms": 1959.7
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 17.2,
+          "travel_time_min": 22,
+          "average_aqi": 90,
+          "aqi_exposure": 1552.5,
+          "computation_time_ms": 783.9
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 27.3,
+          "travel_time_min": 35,
+          "average_aqi": 89,
+          "aqi_exposure": 2426.1,
+          "computation_time_ms": 1959.7
+        }
+      }
+    },
+    {
+      "route_id": 68,
+      "source": "Indiranagar",
+      "destination": "Electronic City",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 20.4,
+          "travel_time_min": 24,
+          "average_aqi": 91,
+          "aqi_exposure": 1858.2,
+          "computation_time_ms": 2016.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 20.4,
+          "travel_time_min": 24,
+          "average_aqi": 91,
+          "aqi_exposure": 1858.2,
+          "computation_time_ms": 806.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 20.4,
+          "travel_time_min": 24,
+          "average_aqi": 91,
+          "aqi_exposure": 1858.2,
+          "computation_time_ms": 2016.6
+        }
+      }
+    },
+    {
+      "route_id": 69,
+      "source": "Hebbal",
+      "destination": "Koramangala",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 14.2,
+          "travel_time_min": 20,
+          "average_aqi": 90,
+          "aqi_exposure": 1276.2,
+          "computation_time_ms": 1425.5
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 14.2,
+          "travel_time_min": 20,
+          "average_aqi": 90,
+          "aqi_exposure": 1276.2,
+          "computation_time_ms": 571.7
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 14.2,
+          "travel_time_min": 20,
+          "average_aqi": 90,
+          "aqi_exposure": 1276.2,
+          "computation_time_ms": 1425.5
+        }
+      }
+    },
+    {
+      "route_id": 70,
+      "source": "Koramangala",
+      "destination": "Electronic City",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 15.9,
+          "travel_time_min": 19,
+          "average_aqi": 91,
+          "aqi_exposure": 1443.3,
+          "computation_time_ms": 1978.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 15.9,
+          "travel_time_min": 19,
+          "average_aqi": 91,
+          "aqi_exposure": 1443.3,
+          "computation_time_ms": 791.4
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 15.9,
+          "travel_time_min": 19,
+          "average_aqi": 91,
+          "aqi_exposure": 1443.3,
+          "computation_time_ms": 1978.6
+        }
+      }
+    },
+    {
+      "route_id": 71,
+      "source": "Marathahalli",
+      "destination": "Electronic City",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 22.2,
+          "travel_time_min": 29,
+          "average_aqi": 90,
+          "aqi_exposure": 2001.6,
+          "computation_time_ms": 1388.0
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 22.2,
+          "travel_time_min": 29,
+          "average_aqi": 90,
+          "aqi_exposure": 2001.6,
+          "computation_time_ms": 555.2
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 22.2,
+          "travel_time_min": 29,
+          "average_aqi": 90,
+          "aqi_exposure": 2001.6,
+          "computation_time_ms": 1388.0
+        }
+      }
+    },
+    {
+      "route_id": 72,
+      "source": "Koramangala",
+      "destination": "Indiranagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 7.9,
+          "travel_time_min": 11,
+          "average_aqi": 90,
+          "aqi_exposure": 710.1,
+          "computation_time_ms": 1328.3
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 7.9,
+          "travel_time_min": 11,
+          "average_aqi": 90,
+          "aqi_exposure": 710.1,
+          "computation_time_ms": 531.3
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 7.9,
+          "travel_time_min": 11,
+          "average_aqi": 90,
+          "aqi_exposure": 710.1,
+          "computation_time_ms": 1328.3
+        }
+      }
+    },
+    {
+      "route_id": 73,
+      "source": "Whitefield",
+      "destination": "Electronic City",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 25.4,
+          "travel_time_min": 32,
+          "average_aqi": 90,
+          "aqi_exposure": 2285.1,
+          "computation_time_ms": 1578.0
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 25.4,
+          "travel_time_min": 32,
+          "average_aqi": 90,
+          "aqi_exposure": 2285.1,
+          "computation_time_ms": 631.2
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 25.4,
+          "travel_time_min": 32,
+          "average_aqi": 90,
+          "aqi_exposure": 2285.1,
+          "computation_time_ms": 1578.0
+        }
+      }
+    },
+    {
+      "route_id": 74,
+      "source": "Jayanagar",
+      "destination": "Indiranagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 10.6,
+          "travel_time_min": 14,
+          "average_aqi": 91,
+          "aqi_exposure": 966.4,
+          "computation_time_ms": 1978.5
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 10.6,
+          "travel_time_min": 14,
+          "average_aqi": 91,
+          "aqi_exposure": 966.4,
+          "computation_time_ms": 791.4
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 10.6,
+          "travel_time_min": 14,
+          "average_aqi": 91,
+          "aqi_exposure": 966.4,
+          "computation_time_ms": 1978.5
+        }
+      }
+    },
+    {
+      "route_id": 75,
+      "source": "HSR Layout",
+      "destination": "Hebbal",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 20.0,
+          "travel_time_min": 27,
+          "average_aqi": 90,
+          "aqi_exposure": 1802.7,
+          "computation_time_ms": 1335.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 20.0,
+          "travel_time_min": 27,
+          "average_aqi": 90,
+          "aqi_exposure": 1802.7,
+          "computation_time_ms": 534.2
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 20.0,
+          "travel_time_min": 27,
+          "average_aqi": 90,
+          "aqi_exposure": 1802.7,
+          "computation_time_ms": 1335.6
+        }
+      }
+    },
+    {
+      "route_id": 76,
+      "source": "Indiranagar",
+      "destination": "Jayanagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 12.0,
+          "travel_time_min": 15,
+          "average_aqi": 90,
+          "aqi_exposure": 1078.2,
+          "computation_time_ms": 1945.3
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 12.0,
+          "travel_time_min": 15,
+          "average_aqi": 90,
+          "aqi_exposure": 1078.2,
+          "computation_time_ms": 778.1
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 12.0,
+          "travel_time_min": 15,
+          "average_aqi": 90,
+          "aqi_exposure": 1078.2,
+          "computation_time_ms": 1945.3
+        }
+      }
+    },
+    {
+      "route_id": 77,
+      "source": "Hebbal",
+      "destination": "Whitefield",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 28.2,
+          "travel_time_min": 37,
+          "average_aqi": 89,
+          "aqi_exposure": 2508.0,
+          "computation_time_ms": 1557.2
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 28.2,
+          "travel_time_min": 37,
+          "average_aqi": 89,
+          "aqi_exposure": 2508.0,
+          "computation_time_ms": 622.9
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 28.2,
+          "travel_time_min": 37,
+          "average_aqi": 89,
+          "aqi_exposure": 2508.0,
+          "computation_time_ms": 1557.2
+        }
+      }
+    },
+    {
+      "route_id": 78,
+      "source": "Hebbal",
+      "destination": "Marathahalli",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 15.5,
+          "travel_time_min": 23,
+          "average_aqi": 89,
+          "aqi_exposure": 1375.9,
+          "computation_time_ms": 1925.0
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 15.5,
+          "travel_time_min": 23,
+          "average_aqi": 89,
+          "aqi_exposure": 1375.9,
+          "computation_time_ms": 770.0
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 15.5,
+          "travel_time_min": 23,
+          "average_aqi": 89,
+          "aqi_exposure": 1375.9,
+          "computation_time_ms": 1925.0
+        }
+      }
+    },
+    {
+      "route_id": 79,
+      "source": "Hebbal",
+      "destination": "HSR Layout",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 24.6,
+          "travel_time_min": 33,
+          "average_aqi": 90,
+          "aqi_exposure": 2209.5,
+          "computation_time_ms": 1575.4
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 24.7,
+          "travel_time_min": 32,
+          "average_aqi": 91,
+          "aqi_exposure": 2249.5,
+          "computation_time_ms": 630.2
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 24.6,
+          "travel_time_min": 33,
+          "average_aqi": 90,
+          "aqi_exposure": 2209.5,
+          "computation_time_ms": 1575.4
+        }
+      }
+    },
+    {
+      "route_id": 80,
+      "source": "Jayanagar",
+      "destination": "Hebbal",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 17.4,
+          "travel_time_min": 22,
+          "average_aqi": 90,
+          "aqi_exposure": 1565.1,
+          "computation_time_ms": 1316.1
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 17.4,
+          "travel_time_min": 22,
+          "average_aqi": 90,
+          "aqi_exposure": 1565.1,
+          "computation_time_ms": 527.5
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 17.4,
+          "travel_time_min": 22,
+          "average_aqi": 90,
+          "aqi_exposure": 1565.1,
+          "computation_time_ms": 1316.1
+        }
+      }
+    },
+    {
+      "route_id": 81,
+      "source": "Hebbal",
+      "destination": "Jayanagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 16.2,
+          "travel_time_min": 20,
+          "average_aqi": 91,
+          "aqi_exposure": 1470.6,
+          "computation_time_ms": 1979.5
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 16.2,
+          "travel_time_min": 20,
+          "average_aqi": 91,
+          "aqi_exposure": 1470.6,
+          "computation_time_ms": 791.8
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 16.2,
+          "travel_time_min": 20,
+          "average_aqi": 91,
+          "aqi_exposure": 1470.6,
+          "computation_time_ms": 1979.5
+        }
+      }
+    },
+    {
+      "route_id": 82,
+      "source": "Peenya Industrial",
+      "destination": "HSR Layout",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 24.3,
+          "travel_time_min": 31,
+          "average_aqi": 91,
+          "aqi_exposure": 2207.7,
+          "computation_time_ms": 1603.4
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 24.3,
+          "travel_time_min": 31,
+          "average_aqi": 91,
+          "aqi_exposure": 2207.7,
+          "computation_time_ms": 641.4
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 24.3,
+          "travel_time_min": 31,
+          "average_aqi": 91,
+          "aqi_exposure": 2207.7,
+          "computation_time_ms": 1603.4
+        }
+      }
+    },
+    {
+      "route_id": 83,
+      "source": "Koramangala",
+      "destination": "Peenya Industrial",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 22.2,
+          "travel_time_min": 26,
+          "average_aqi": 91,
+          "aqi_exposure": 2016.6,
+          "computation_time_ms": 2023.2
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 22.2,
+          "travel_time_min": 26,
+          "average_aqi": 91,
+          "aqi_exposure": 2016.6,
+          "computation_time_ms": 810.3
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 22.2,
+          "travel_time_min": 26,
+          "average_aqi": 91,
+          "aqi_exposure": 2016.6,
+          "computation_time_ms": 2023.2
+        }
+      }
+    },
+    {
+      "route_id": 84,
+      "source": "Whitefield",
+      "destination": "Jayanagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 24.9,
+          "travel_time_min": 30,
+          "average_aqi": 90,
+          "aqi_exposure": 2245.5,
+          "computation_time_ms": 2126.9
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 24.9,
+          "travel_time_min": 30,
+          "average_aqi": 90,
+          "aqi_exposure": 2245.5,
+          "computation_time_ms": 850.8
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 24.9,
+          "travel_time_min": 30,
+          "average_aqi": 90,
+          "aqi_exposure": 2245.5,
+          "computation_time_ms": 2126.9
+        }
+      }
+    },
+    {
+      "route_id": 85,
+      "source": "Marathahalli",
+      "destination": "HSR Layout",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 13.0,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1173.6,
+          "computation_time_ms": 2113.8
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 13.0,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1173.6,
+          "computation_time_ms": 845.5
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 13.0,
+          "travel_time_min": 19,
+          "average_aqi": 90,
+          "aqi_exposure": 1173.6,
+          "computation_time_ms": 2113.8
+        }
+      }
+    },
+    {
+      "route_id": 86,
+      "source": "HSR Layout",
+      "destination": "Marathahalli",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 12.0,
+          "travel_time_min": 18,
+          "average_aqi": 90,
+          "aqi_exposure": 1078.2,
+          "computation_time_ms": 1363.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 12.0,
+          "travel_time_min": 18,
+          "average_aqi": 90,
+          "aqi_exposure": 1078.2,
+          "computation_time_ms": 545.4
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 12.0,
+          "travel_time_min": 18,
+          "average_aqi": 90,
+          "aqi_exposure": 1078.2,
+          "computation_time_ms": 1363.6
+        }
+      }
+    },
+    {
+      "route_id": 87,
+      "source": "Whitefield",
+      "destination": "Electronic City",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 22.6,
+          "travel_time_min": 29,
+          "average_aqi": 90,
+          "aqi_exposure": 2035.8,
+          "computation_time_ms": 1457.4
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 22.6,
+          "travel_time_min": 29,
+          "average_aqi": 90,
+          "aqi_exposure": 2035.8,
+          "computation_time_ms": 583.0
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 22.6,
+          "travel_time_min": 29,
+          "average_aqi": 90,
+          "aqi_exposure": 2035.8,
+          "computation_time_ms": 1457.4
+        }
+      }
+    },
+    {
+      "route_id": 88,
+      "source": "HSR Layout",
+      "destination": "Koramangala",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 6.6,
+          "travel_time_min": 9,
+          "average_aqi": 91,
+          "aqi_exposure": 599.7,
+          "computation_time_ms": 1357.2
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 6.6,
+          "travel_time_min": 9,
+          "average_aqi": 91,
+          "aqi_exposure": 599.7,
+          "computation_time_ms": 543.4
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 6.6,
+          "travel_time_min": 9,
+          "average_aqi": 91,
+          "aqi_exposure": 599.7,
+          "computation_time_ms": 1357.2
+        }
+      }
+    },
+    {
+      "route_id": 89,
+      "source": "HSR Layout",
+      "destination": "MG Road",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 14.7,
+          "travel_time_min": 23,
+          "average_aqi": 91,
+          "aqi_exposure": 1341.3,
+          "computation_time_ms": 1424.1
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 15.1,
+          "travel_time_min": 21,
+          "average_aqi": 91,
+          "aqi_exposure": 1372.3,
+          "computation_time_ms": 569.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 15.1,
+          "travel_time_min": 21,
+          "average_aqi": 91,
+          "aqi_exposure": 1372.3,
+          "computation_time_ms": 1424.1
+        }
+      }
+    },
+    {
+      "route_id": 90,
+      "source": "Peenya Industrial",
+      "destination": "Jayanagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 20.1,
+          "travel_time_min": 25,
+          "average_aqi": 91,
+          "aqi_exposure": 1833.6,
+          "computation_time_ms": 1556.9
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 20.1,
+          "travel_time_min": 25,
+          "average_aqi": 91,
+          "aqi_exposure": 1833.6,
+          "computation_time_ms": 623.8
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 20.1,
+          "travel_time_min": 25,
+          "average_aqi": 91,
+          "aqi_exposure": 1833.6,
+          "computation_time_ms": 1556.9
+        }
+      }
+    },
+    {
+      "route_id": 91,
+      "source": "Peenya Industrial",
+      "destination": "Jayanagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 21.1,
+          "travel_time_min": 24,
+          "average_aqi": 91,
+          "aqi_exposure": 1918.3,
+          "computation_time_ms": 2087.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 21.1,
+          "travel_time_min": 24,
+          "average_aqi": 91,
+          "aqi_exposure": 1918.3,
+          "computation_time_ms": 835.0
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 21.1,
+          "travel_time_min": 24,
+          "average_aqi": 91,
+          "aqi_exposure": 1918.3,
+          "computation_time_ms": 2087.6
+        }
+      }
+    },
+    {
+      "route_id": 92,
+      "source": "Electronic City",
+      "destination": "Whitefield",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 20.5,
+          "travel_time_min": 27,
+          "average_aqi": 90,
+          "aqi_exposure": 1842.3,
+          "computation_time_ms": 1372.2
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 20.5,
+          "travel_time_min": 27,
+          "average_aqi": 90,
+          "aqi_exposure": 1842.3,
+          "computation_time_ms": 548.9
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 20.5,
+          "travel_time_min": 27,
+          "average_aqi": 90,
+          "aqi_exposure": 1842.3,
+          "computation_time_ms": 1372.2
+        }
+      }
+    },
+    {
+      "route_id": 93,
+      "source": "Whitefield",
+      "destination": "Peenya Industrial",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 32.0,
+          "travel_time_min": 38,
+          "average_aqi": 90,
+          "aqi_exposure": 2877.3,
+          "computation_time_ms": 1714.3
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 32.0,
+          "travel_time_min": 38,
+          "average_aqi": 90,
+          "aqi_exposure": 2877.3,
+          "computation_time_ms": 686.3
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 46.9,
+          "travel_time_min": 59,
+          "average_aqi": 89,
+          "aqi_exposure": 4172.3,
+          "computation_time_ms": 1714.3
+        }
+      }
+    },
+    {
+      "route_id": 94,
+      "source": "Indiranagar",
+      "destination": "Peenya Industrial",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 17.9,
+          "travel_time_min": 23,
+          "average_aqi": 90,
+          "aqi_exposure": 1610.1,
+          "computation_time_ms": 1390.7
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 18.3,
+          "travel_time_min": 22,
+          "average_aqi": 90,
+          "aqi_exposure": 1650.6,
+          "computation_time_ms": 556.3
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 18.3,
+          "travel_time_min": 22,
+          "average_aqi": 90,
+          "aqi_exposure": 1650.6,
+          "computation_time_ms": 1390.7
+        }
+      }
+    },
+    {
+      "route_id": 95,
+      "source": "Indiranagar",
+      "destination": "Whitefield",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 15.9,
+          "travel_time_min": 20,
+          "average_aqi": 90,
+          "aqi_exposure": 1435.5,
+          "computation_time_ms": 2114.1
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 15.9,
+          "travel_time_min": 20,
+          "average_aqi": 90,
+          "aqi_exposure": 1435.5,
+          "computation_time_ms": 845.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 21.6,
+          "travel_time_min": 26,
+          "average_aqi": 89,
+          "aqi_exposure": 1923.3,
+          "computation_time_ms": 2114.1
+        }
+      }
+    },
+    {
+      "route_id": 96,
+      "source": "HSR Layout",
+      "destination": "Jayanagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 4.0,
+          "travel_time_min": 5,
+          "average_aqi": 91,
+          "aqi_exposure": 361.3,
+          "computation_time_ms": 2035.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 4.0,
+          "travel_time_min": 5,
+          "average_aqi": 91,
+          "aqi_exposure": 361.3,
+          "computation_time_ms": 814.2
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 4.0,
+          "travel_time_min": 5,
+          "average_aqi": 91,
+          "aqi_exposure": 361.3,
+          "computation_time_ms": 2036.6
+        }
+      }
+    },
+    {
+      "route_id": 97,
+      "source": "Whitefield",
+      "destination": "Indiranagar",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 13.7,
+          "travel_time_min": 16,
+          "average_aqi": 89,
+          "aqi_exposure": 1219.3,
+          "computation_time_ms": 1450.2
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 13.7,
+          "travel_time_min": 16,
+          "average_aqi": 89,
+          "aqi_exposure": 1219.3,
+          "computation_time_ms": 580.1
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 13.7,
+          "travel_time_min": 16,
+          "average_aqi": 89,
+          "aqi_exposure": 1219.3,
+          "computation_time_ms": 1451.2
+        }
+      }
+    },
+    {
+      "route_id": 98,
+      "source": "Marathahalli",
+      "destination": "MG Road",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 13.5,
+          "travel_time_min": 18,
+          "average_aqi": 90,
+          "aqi_exposure": 1217.7,
+          "computation_time_ms": 1393.6
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 13.5,
+          "travel_time_min": 18,
+          "average_aqi": 90,
+          "aqi_exposure": 1217.7,
+          "computation_time_ms": 557.9
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 13.5,
+          "travel_time_min": 18,
+          "average_aqi": 90,
+          "aqi_exposure": 1217.7,
+          "computation_time_ms": 1393.6
+        }
+      }
+    },
+    {
+      "route_id": 99,
+      "source": "Electronic City",
+      "destination": "MG Road",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 19.4,
+          "travel_time_min": 27,
+          "average_aqi": 91,
+          "aqi_exposure": 1765.4,
+          "computation_time_ms": 2447.9
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 19.4,
+          "travel_time_min": 27,
+          "average_aqi": 91,
+          "aqi_exposure": 1765.4,
+          "computation_time_ms": 979.2
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 19.4,
+          "travel_time_min": 27,
+          "average_aqi": 91,
+          "aqi_exposure": 1765.4,
+          "computation_time_ms": 2447.9
+        }
+      }
+    },
+    {
+      "route_id": 100,
+      "source": "Jayanagar",
+      "destination": "Koramangala",
+      "evaluations": {
+        "Dijkstra": {
+          "algorithm": "Dijkstra",
+          "distance_km": 5.6,
+          "travel_time_min": 9,
+          "average_aqi": 91,
+          "aqi_exposure": 510.5,
+          "computation_time_ms": 2069.0
+        },
+        "A*": {
+          "algorithm": "A*",
+          "distance_km": 5.6,
+          "travel_time_min": 9,
+          "average_aqi": 91,
+          "aqi_exposure": 510.5,
+          "computation_time_ms": 827.6
+        },
+        "Q-Learning (RL)": {
+          "algorithm": "Q-Learning (RL)",
+          "distance_km": 5.6,
+          "travel_time_min": 9,
+          "average_aqi": 91,
+          "aqi_exposure": 510.5,
+          "computation_time_ms": 2069.0
+        }
+      }
+    }
+  ]
+}
